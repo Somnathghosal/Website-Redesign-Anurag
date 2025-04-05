@@ -12,7 +12,7 @@ const VideoSection = () => {
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-xl">
             <iframe 
               className="absolute top-0 left-0 w-full h-full" 
-              src="https://www.youtube.com/embed/eN7i6jJYchg" 
+              src="https://www.youtube.com/embed/eN7i6jJYchg?si=57d83FwY-GqJRatD" 
               title="Participatory Action Research Projects" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
