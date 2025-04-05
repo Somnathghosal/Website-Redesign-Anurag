@@ -47,3 +47,5 @@ Copy/src
   /pages            # Page components including Research.tsx
   App.tsx           # Main application component
   main.tsx          # Application entry point
+Webiste is actuaaly deployed through versel for redeployment or anyother thing update the changes through versel
+
