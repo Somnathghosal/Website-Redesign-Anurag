@@ -16,7 +16,7 @@ const JournalPage = () => {
           doi: "10.1007/s41685-022-00229-8",
         },
         {
-          authors: "Ghosh M, Ghosal S.",
+          authors: "Ghosh, M. and Ghosal S.",
           year: 2021,
           title:
             "Multidimensional Rural Livelihoods in Indian Sub-Himalaya: Regional Analysis, Households Well-Being and Its Determinants",
@@ -25,7 +25,7 @@ const JournalPage = () => {
           doi: "10.1177/09730052211047639",
         },
         {
-          authors: "Ghosh M, Ghosal S.",
+          authors: "Ghosh, M. and Ghosal S.",
           year: 2021,
           title:
             "Households' Choices and Their Drivers to Rural Non-Farm Livelihood Diversification in West Bengal, India",
@@ -34,7 +34,7 @@ const JournalPage = () => {
           doi: "10.1177/00219096211040592",
         },
         {
-          authors: "Ghosh M, Ghosal S.",
+          authors: "Ghosh, M. and Ghosal S.",
           year: 2019,
           title:
             "Living With Insecurity: A Critical Examination of the Environmental Problems Linked with Social Problems in Rural West Bengal, India",
@@ -464,7 +464,7 @@ const JournalPage = () => {
                 >
                   <p className="text-lg text-gray-800 mb-2">
                     {paper.authors} ({paper.year}). {paper.title}.{" "}
-                    <span className="italic">{paper.journal}</span>.{" "}
+                    <span className="italic">{paper.journal}</span>{" "}
                     {paper.details}.
                   </p>
                   {paper.doi && (

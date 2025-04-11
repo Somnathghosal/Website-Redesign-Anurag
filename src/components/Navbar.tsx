@@ -83,17 +83,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full  z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-white shadow-md py-2" : "bg-gray-100 py-4"
       }`}
     >
-      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24">
+      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 ">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 text-center">
             <img
               src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               alt="GEAR - Geo-Action Research"
-              className="h-20 max-h-full"
+              className="h-24 max-h-full"
             />
             <span className="text-2xl md:text-lg font-bold text-blue-700 flex items-center">
               Dr. Somnath Ghosal

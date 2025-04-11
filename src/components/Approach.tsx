@@ -3,9 +3,9 @@ const Approach = () => {
     <div className="pt-6 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col">
-          <div className="w-full">
+          <div className="w-full text-justify">
             <h2 className="text-3xl font-bold text-blue-900 mb-6">Approach</h2>
-            <p className=" text-gray-700 mb-4 text-xl">
+            <p className=" text-gray-700 mb-4 text-xl text-justify">
               At the heart of our approach lies a profound commitment to
               empowering socio-economically marginalized communities through
               innovative, research-driven interventions. We recognize that

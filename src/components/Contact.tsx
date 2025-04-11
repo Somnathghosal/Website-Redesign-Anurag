@@ -12,7 +12,7 @@ const Contact = () => {
             <img
               src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               alt="GEAR - Geo-Action Research"
-              className="h-24 max-h-full mb-4 mx-auto"
+              className="h-28 max-h-full mb-4 mx-auto"
             />
             <h2 className="lg:text-4xl text-3xl font-light italic mb-8 text-white text-center">
               GeoAction Research Lab

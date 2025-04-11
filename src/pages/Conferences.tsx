@@ -8,7 +8,7 @@ const conferences = [
     date: "13th – 16th March 2025",
     presentationTitle:
       "Rural Community Development through Non-Farm Employment Opportunity Creation: Scope and Perspectives",
-    role: "Presenter",
+    role: "Chairing and Paper Presented at the sixteenth ICERD Scientific Session",
   },
   {
     name: "International Institute of Administrative Science (IIAS) – Department of Administrative Reforms and Public Grievances (DARPG) India International Conference 2025",
@@ -19,6 +19,13 @@ const conferences = [
     role: "Presenter",
   },
   {
+    name: "22nd NEP Orientation and Sensitization Programme",
+    location: "UGC-MMTTC Mizoram University",
+    date: "5th February – 13th February, 2025",
+    presentationTitle: "Planning for Alternative Subsistence: The Way Forward",
+    role: "Resource Person",
+  },
+  {
     name: "Training Programme on Sustainable Livelihoods and Adaptation to Climate Change",
     location:
       "National Institute of Rural Development and Panchayati Raj (NIRDPR), Hyderabad",
@@ -27,13 +34,7 @@ const conferences = [
       "Policies to Enhance Sustainable Rural Livelihoods in Context of Climate Change Adaptation",
     role: "Invited Talk",
   },
-  {
-    name: "22nd NEP Orientation and Sensitization Programme",
-    location: "UGC-MMTTC Mizoram University",
-    date: "5th February – 13th February, 2025",
-    presentationTitle: "Planning for Alternative Subsistence: The Way Forward",
-    role: "Resource Person",
-  },
+
   {
     name: "MMTTP-NEP Orientation and Sensitization Programme",
     location: "North-Eastern Hill University, Shillong",

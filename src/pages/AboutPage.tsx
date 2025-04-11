@@ -124,7 +124,7 @@ const AboutPage = () => {
             </div>
             <div className="md:w-[65%]">
               <div className="flex items-center mb-4"></div>
-              <div className="max-h-[410px] overflow-y-auto pr-4">
+              <div className="max-h-[410px] overflow-y-auto pr-4 text-justify">
                 <p className="text-gray-700 text-lg leading-relaxed">
                   <p>
                     Dr. Somnath Ghosal is a sustainability expert specializing
@@ -141,12 +141,12 @@ const AboutPage = () => {
                     {" "}
                     Before joining IIT Kharagpur, Dr. Somnath Ghosal held
                     positions at the University of Nottingham, CSSS Calcutta,
-                    IDF Gurgaon, Renmin University (China), and the University
-                    of the Fraser Valley. He has also been a visiting fellow at
-                    IITs, IIMs, NITs, and other leading universities and
-                    research institutes. Additionally, he plays a key role in
-                    the sensitization of the National Education Policy for the
-                    Government of India.
+                    IDF Gurgaon, Renmin University of China, and IIE Pune. He
+                    has also been a visiting fellow at IITs, IIMs, NITs, and
+                    University of the Fraser Valley and many other leading
+                    universities and research institutes in India and abroad.
+                    Additionally, he plays a key role in the sensitization of
+                    the National Education Policy for the Government of India.
                   </p>{" "}
                   <br></br>
                   Dr. Ghosal's work is deeply rooted in participatory action
@@ -286,14 +286,14 @@ const AboutPage = () => {
                 </p>
                 <div className="flex flex-col gap-4">
                   <a
-                    href="https://docs.google.com/document/d/1pPI1zXYPIdWNGgl80-z005IxZlXsy9RZ/edit?usp=drive_link&ouid=113561662674627349233&rtpof=true&sd=true"
+                    href="https://drive.google.com/file/d/1DMchF-Z5q211vFb9o-sNxh1VUXnH96i1/view?usp=drive_link"
                     target="_blank"
                     className="text-xl hover:text-blue-500 hover:underline text-blue-700"
                   >
                     Climate Vulnerability and Adaptation
                   </a>
                   <a
-                    href="https://docs.google.com/document/d/1XV6GRvoBdvnC93PtNwWZ-dTGnyb75a1o/edit?usp=drive_link&ouid=113561662674627349233&rtpof=true&sd=true"
+                    href="https://drive.google.com/file/d/1cybUDSHI9D1bfRoJldeM0kSyKoIRmDBK/view?usp=sharing"
                     target="_blank"
                     className="text-xl hover:text-blue-500 hover:underline text-blue-700"
                   >

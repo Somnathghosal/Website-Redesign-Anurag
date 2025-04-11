@@ -209,7 +209,7 @@ const ContactUs = () => {
               <img
                 src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
                 alt="GEAR - Geo-Action Research"
-                className="h-20 mx-auto max-h-full mb-4"
+                className="h-28 mx-auto max-h-full mb-4"
               />
               <h3 className="text-xl font-bold text-blue-700 mb-4">
                 Office Hours

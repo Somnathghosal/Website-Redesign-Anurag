@@ -3,10 +3,10 @@ const Mission = () => {
     <div className="pt-6 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col">
-          <div className="w-full">
+          <div className="w-full text-justify">
             <h2 className="text-3xl font-bold text-blue-900 mb-6">Mission</h2>
             <p className="text-gray-700 text-xl leading-relaxed mb-6">
-              Our mission is to develop and implement{" "}
+              To develop and implement{" "}
               <span className="font-semibold">
                 cost-effective, innovative technical and engineering solutions
               </span>{" "}

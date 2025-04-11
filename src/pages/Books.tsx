@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 const bookChapters = [
   {
     author: "Ghosal, S. (2023).",
-    title:
-      "Changing the Geography of Indian Rurality: By Force or Choice (p. 302 – 313).",
+    title: "Changing the Geography of Indian Rurality: By Force or Choice.",
     source:
       "46th Indian Social Science Congress, p. 302 – 313. Bharathidasan University, Tiruchirappalli, India.",
   },
@@ -30,7 +29,7 @@ const bookChapters = [
       "In Liu, J. et al. (Edi.), Linking Biological and Cultural Diversity to Landscape Management, p. 48 – 51. Nanjing Forestry University, China.",
   },
   {
-    author: "Ghosal, S. (2013)",
+    author: "Ghosal, S. (2014)",
     title: "Role of Participatory Mechanism for Inclusive Growth.",
     source:
       "In Kannan, E. et al. (Edi.), Green Economy and Sustainable Development, p. 1 - 13. ISEC, Bangalore, India.",
@@ -115,8 +114,8 @@ const Books = () => {
         <ul className="list-disc pl-6 space-y-2 text-lg">
           {bookChapters.map((chapter, index) => (
             <li key={index}>
-              <span className="font-bold">{chapter.author}</span>{" "}
-              {chapter.title} <i>{chapter.source}</i>
+              <span className="">{chapter.author}</span> {chapter.title}{" "}
+              {chapter.source}
             </li>
           ))}
         </ul>
@@ -126,8 +125,8 @@ const Books = () => {
         <ul className="list-disc pl-6 space-y-2 text-lg">
           {bookReviews.map((review, index) => (
             <li key={index}>
-              <span className="font-bold">{review.title}</span> by{" "}
-              {review.author} in <i>{review.source}</i>
+              <span className="">{review.title}</span> by {review.author} in{" "}
+              {review.source}
             </li>
           ))}
         </ul>

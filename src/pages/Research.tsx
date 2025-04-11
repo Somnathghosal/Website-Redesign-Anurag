@@ -25,7 +25,7 @@ const researchData: ResearchItem[] = [
       "The initiative investigates the complex interplay between scientific research and its implications for public policy and societal development. This project aims to show how scientific discoveries may be strategically used to educate and create policies that support sustainable development and social well-being by examining a variety of case studies. The program aims to build a more informed and proactive public policy landscape by highlighting the significance of interdisciplinary methods and active participation from diverse stakeholders to bridge the gap between scientific and societal requirements.",
   },
   {
-    title: "Learning Hygenic Practices for Better Living.",
+    title: "Rural Health, and Hygenic Practices",
     description:
       "Hygiene education emphasizes behavioural change models that improve public health outcomes.",
     details:
@@ -33,21 +33,21 @@ const researchData: ResearchItem[] = [
     videoUrl: "https://www.youtube.com/embed/xKtV118m5Gw?si=qxR2akRaAuq-kwY0",
   },
   {
-    title: "Public Policy for Rural Health and Education ",
+    title: "Education and Skill Development",
     description:
       "Public policy emphasizes inclusive healthcare and education for rural communities.",
     details:
       "Public policy emphasizes inclusive healthcare and education for rural communities. Decentralized healthcare models improve accessibility and affordability, ensuring better health outcomes. Technology and community participation play a crucial role in enhancing rural education opportunities. Addressing gaps in policy implementation leads to evidence-based solutions for sustainable development. Action research focuses on innovative frameworks that integrate education, health, and livelihood strategies.",
   },
   {
-    title: "Social Forestry for Environmental and Biodiversity Conservation",
+    title: "Social Forestry and Nature-Based Entrepreneurship",
     description:
       "Social forestry initiatives focus on community-led conservation efforts to restore degraded ecosystems.",
     details:
       "Social forestry initiatives focus on community-led conservation efforts to restore degraded ecosystems. Agroforestry plays a key role in improving rural incomes while maintaining biodiversity. Policy incentives encourage sustainable forest management and carbon sequestration. Afforestation programs enhance climate resilience and support rural livelihoods. A balanced approach to environmental conservation and economic empowerment ensures long-term sustainability.",
   },
   {
-    title: "Green Urban Planning Environment and Biodiversity Conservation",
+    title: "Green Planning for Environment and Biodiversity Conservation",
     description:
       "Advancing green urban planning initiatives and promoting biodiversity conservation through innovative research designs.",
     details:
@@ -77,7 +77,7 @@ const Research = () => {
         <div className="lg:absolute top-20 ">
           {!isFullscreen ? (
             // Normal view
-            <div className="lg:w-1/2 lg:h-screen flex items-center justify-center lg:fixed lg:left-0 lg:top-0">
+            <div className="lg:w-1/2 lg:h-screen flex flex-col items-center justify-center lg:fixed lg:left-0 lg:top-0">
               <div
                 className="w-full max-w-lg h-auto aspect-video bg-cover bg-center cursor-pointer"
                 style={{
@@ -88,6 +88,7 @@ const Research = () => {
                 }}
                 onClick={toggleFullscreen}
               ></div>
+              <p className="text-blue-500 py-10">Click the image to enlarge</p>
             </div>
           ) : (
             // Fullscreen view

@@ -57,6 +57,11 @@ const articles = [
     img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704536/Media/rjcnyvbtea0qkn9qtvu7.jpg",
     alt: "Article 12",
   },
+  {
+    id: 13,
+    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1744349861/ji2myvlfzsotmbfaby2x.png",
+    alt: "Article 13",
+  },
 ];
 
 const News = () => {

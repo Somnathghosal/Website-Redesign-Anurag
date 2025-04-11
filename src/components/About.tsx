@@ -3,14 +3,14 @@ const About = () => {
     <div className="pt-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col">
-          <div className="w-full">
+          <div className="w-full text-justify">
             <h2 className="text-3xl font-bold text-blue-900 mb-6">
               Our Vision
             </h2>
             <p className="text-gray-700 text-xl leading-relaxed mb-6">
-              Our vision is rooted in a profound commitment to transformative
-              social change, focusing on empowering marginalized communities
-              through a holistic approach to development. We are dedicated to
+              It is rooted in a profound commitment to transformative social
+              change, focusing on empowering marginalized communities through a
+              holistic approach to development. We are dedicated to
               systematically addressing the{" "}
               <span className="font-semibold">
                 United Nations Sustainable Development Goals
