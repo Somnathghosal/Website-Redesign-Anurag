@@ -27,9 +27,9 @@ const researchData: ResearchItem[] = [
   {
     title: "Rural Health, and Hygenic Practices",
     description:
-      "Hygiene education emphasizes behavioural change models that improve public health outcomes.",
+      "Good hygiene starts with awareness – and that awareness often begins with education.",
     details:
-      "Hygiene education emphasizes behavioural change models that improve public health outcomes. School-based hygiene programs foster long-term sanitation habits among children. Women and childern may play a vital role in promoting hygiene awareness in rural areas. Infrastructure development, including clean water and sanitation facilities, is crucial for better living conditions. Integrating hygiene education with public health initiatives maximizes its impact on community well-being.",
+      "Good hygiene starts with awareness – and that awareness often begins with education. In rural communities, teaching children about hygiene in schools can build habits that may last for a lifetime. Women and children, in particular, often become key voices in spreading clean and safe practices at home and within the community. However, awareness alone is not enough. Without access to clean water, restroom facility, and proper sanitation systems, even the best hygiene practices are hard to maintain. That is why, hard suitable infrastructure development along with awareness building is vital. It creates the foundation for healthier daily living. When hygiene education and strong public health systems go hand in hand with better infrastructures, the impact on community well-being can be genuinely transformative.",
     videoUrl: "https://www.youtube.com/embed/xKtV118m5Gw?si=qxR2akRaAuq-kwY0",
   },
   {
