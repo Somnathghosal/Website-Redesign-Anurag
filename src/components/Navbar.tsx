@@ -93,7 +93,7 @@ const Navbar = () => {
             <img
               src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               alt="GEAR - Geo-Action Research"
-              className="h-24 max-h-full"
+              className="h-20 max-h-full"
             />
             <span className="text-2xl md:text-lg font-bold text-blue-700 flex items-center">
               Dr. Somnath Ghosal
