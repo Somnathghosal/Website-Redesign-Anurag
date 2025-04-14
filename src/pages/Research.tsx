@@ -49,9 +49,9 @@ const researchData: ResearchItem[] = [
   {
     title: "Green Planning for Environment and Biodiversity Conservation",
     description:
-      "Advancing green urban planning initiatives and promoting biodiversity conservation through innovative research designs.",
+      "Imagine a natural setting of landscape where every tree tells a story, not just of timber but about medicinal plants, fruits, and resources that sustain life.",
     details:
-      "The project coordinated by Dr. Somnath Ghosal, focuses on improving urban landscapes to enhance biodiversity conservation and sustainability. This unique program incorporates ecological concepts into urban design to produce greener, more resilient communities that not only improve residents' quality of life but also provide home for a variety of flora and wildlife. The initiative highlights the importance of research in establishing public policies that promote ecologically friendly urban environments, demonstrating a dedication to ecological and urban harmony. The initiative aimed to integrate ecological sustainability with urban green spaces, thereby transforming city parks into vibrant ecosystems that educate and engage the public in biodiversity conservation. This innovative approach not only enriched local biodiversity but also served as an educational tool to foster community involvement and awareness about environmental stewardship.",
+      "Imagine a natural setting of landscape where every tree tells a story, not just of timber but about medicinal plants, fruits, and resources that sustain life. This project brings ecological principles to the heart of local communities, enhancing biodiversity and promoting knowledge of sustainability. Focusing on non-timber forest products (NTFPs) emphasizes the hidden value of trees and their role in local ecosystem services. The research initiative aims to raise biodiversity awareness, promoting environment-friendly day-to-day habitats, and transform local areas into vibrant, biodiversity-rich surroundings, fostering sustainable practices and active community involvement.",
     videoUrl: "https://www.youtube.com/embed/dy18F8FOuCg?si=NCvTr7PW6QyCs8u4",
   },
 ];
