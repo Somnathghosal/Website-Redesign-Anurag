@@ -35,9 +35,9 @@ const researchData: ResearchItem[] = [
   {
     title: "Education and Skill Development",
     description:
-      "Public policy emphasizes inclusive healthcare and education for rural communities.",
+      "Education and skill development are fundamentals for creating rural employment opportunities and livelihood generation.",
     details:
-      "Public policy emphasizes inclusive healthcare and education for rural communities. Decentralized healthcare models improve accessibility and affordability, ensuring better health outcomes. Technology and community participation play a crucial role in enhancing rural education opportunities. Addressing gaps in policy implementation leads to evidence-based solutions for sustainable development. Action research focuses on innovative frameworks that integrate education, health, and livelihood strategies.",
+      "Education and skill development are fundamentals for creating rural employment opportunities and livelihood generation. Suitable public policies that prioritize inclusive and accessible learning opportunity may address the constraints related to academic and skill development infrastructure related issues. Uses of modern technology and active community participation may play a pivotal role in expanding learning opportunities in remote areas. Decentralized learning methods and timely teaching-assessment procedures may bring resources closer to learners, making education more relevant and practical. Participatory action research supports innovative approaches for learning and that combine education with necessary skill development, paving the way for sustainable social-wellbeing and better livelihoods.",
   },
   {
     title: "Social Forestry and Nature-Based Entrepreneurship",
