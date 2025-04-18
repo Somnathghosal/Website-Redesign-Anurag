@@ -43,7 +43,7 @@ const publicationCategories = [
     name: "Events Organised",
     path: "/publications/events",
     description: "Workshops, symposia, hackathon, organised by the group.",
-    icon: "📅",
+    icon: "🗓️",
   },
 ];
 

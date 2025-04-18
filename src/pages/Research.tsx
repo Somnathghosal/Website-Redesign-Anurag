@@ -27,17 +27,17 @@ const researchData: ResearchItem[] = [
   {
     title: "Rural Health, and Hygenic Practices",
     description:
-      "Good hygiene starts with awareness – and that awareness often begins with education.",
+      "Hygiene education emphasizes behavioural change models that improve public health outcomes.",
     details:
-      "Good hygiene starts with awareness – and that awareness often begins with education. In rural communities, teaching children about hygiene in schools can build habits that may last for a lifetime. Women and children, in particular, often become key voices in spreading clean and safe practices at home and within the community. However, awareness alone is not enough. Without access to clean water, restroom facility, and proper sanitation systems, even the best hygiene practices are hard to maintain. That is why, hard suitable infrastructure development along with awareness building is vital. It creates the foundation for healthier daily living. When hygiene education and strong public health systems go hand in hand with better infrastructures, the impact on community well-being can be genuinely transformative.",
+      "Hygiene education emphasizes behavioural change models that improve public health outcomes. School-based hygiene programs foster long-term sanitation habits among children. Women and childern may play a vital role in promoting hygiene awareness in rural areas. Infrastructure development, including clean water and sanitation facilities, is crucial for better living conditions. Integrating hygiene education with public health initiatives maximizes its impact on community well-being.",
     videoUrl: "https://www.youtube.com/embed/xKtV118m5Gw?si=qxR2akRaAuq-kwY0",
   },
   {
     title: "Education and Skill Development",
     description:
-      "Education and skill development are fundamentals for creating rural employment opportunities and livelihood generation.",
+      "Public policy emphasizes inclusive healthcare and education for rural communities.",
     details:
-      "Education and skill development are fundamentals for creating rural employment opportunities and livelihood generation. Suitable public policies that prioritize inclusive and accessible learning opportunity may address the constraints related to academic and skill development infrastructure related issues. Uses of modern technology and active community participation may play a pivotal role in expanding learning opportunities in remote areas. Decentralized learning methods and timely teaching-assessment procedures may bring resources closer to learners, making education more relevant and practical. Participatory action research supports innovative approaches for learning and that combine education with necessary skill development, paving the way for sustainable social-wellbeing and better livelihoods.",
+      "Public policy emphasizes inclusive healthcare and education for rural communities. Decentralized healthcare models improve accessibility and affordability, ensuring better health outcomes. Technology and community participation play a crucial role in enhancing rural education opportunities. Addressing gaps in policy implementation leads to evidence-based solutions for sustainable development. Action research focuses on innovative frameworks that integrate education, health, and livelihood strategies.",
   },
   {
     title: "Social Forestry and Nature-Based Entrepreneurship",
@@ -49,9 +49,9 @@ const researchData: ResearchItem[] = [
   {
     title: "Green Planning for Environment and Biodiversity Conservation",
     description:
-      "Imagine a natural setting of landscape where every tree tells a story, not just of timber but about medicinal plants, fruits, and resources that sustain life.",
+      "Advancing green urban planning initiatives and promoting biodiversity conservation through innovative research designs.",
     details:
-      "Imagine a natural setting of landscape where every tree tells a story, not just of timber but about medicinal plants, fruits, and resources that sustain life. This project brings ecological principles to the heart of local communities, enhancing biodiversity and promoting knowledge of sustainability. Focusing on non-timber forest products (NTFPs) emphasizes the hidden value of trees and their role in local ecosystem services. The research initiative aims to raise biodiversity awareness, promoting environment-friendly day-to-day habitats, and transform local areas into vibrant, biodiversity-rich surroundings, fostering sustainable practices and active community involvement.",
+      "The project coordinated by Dr. Somnath Ghosal, focuses on improving urban landscapes to enhance biodiversity conservation and sustainability. This unique program incorporates ecological concepts into urban design to produce greener, more resilient communities that not only improve residents' quality of life but also provide home for a variety of flora and wildlife. The initiative highlights the importance of research in establishing public policies that promote ecologically friendly urban environments, demonstrating a dedication to ecological and urban harmony. The initiative aimed to integrate ecological sustainability with urban green spaces, thereby transforming city parks into vibrant ecosystems that educate and engage the public in biodiversity conservation. This innovative approach not only enriched local biodiversity but also served as an educational tool to foster community involvement and awareness about environmental stewardship.",
     videoUrl: "https://www.youtube.com/embed/dy18F8FOuCg?si=NCvTr7PW6QyCs8u4",
   },
 ];
@@ -209,7 +209,7 @@ const Research = () => {
                       {selectedResearch.title}
                     </h3>
                     <div className="h-1 w-20 bg-blue-400 mb-6"></div>
-                    <p className="mt-2 text-gray-700 leading-relaxed max-w-xl text-center">
+                    <p className="mt-2 text-gray-700 text-justify leading-relaxed max-w-xl ">
                       {selectedResearch.details}
                     </p>
                   </div>

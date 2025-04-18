@@ -29,7 +29,7 @@ type ActiveSectionState = {
 const Team = () => {
   // Initialize state with explicit typing
   const [activeSection, setActiveSection] = useState<ActiveSectionState>({
-    singleGuidance: true,
+    singleGuidance: false,
     jointGuidance: false,
     completed: false,
     mtech: false,

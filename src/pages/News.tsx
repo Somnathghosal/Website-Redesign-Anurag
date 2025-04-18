@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+import { X } from "lucide-react";
+import { useState } from "react";
+
+interface Article {
+  id: number;
+  img: string;
+  alt: string;
+}
 
 const articles = [
   {
@@ -65,6 +73,15 @@ const articles = [
 ];
 
 const News = () => {
+  const [selectedImage, setSelectedImage] = useState<Article | null>(null);
+  const openImageModal = (article: Article) => {
+    setSelectedImage(article);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div>
       {/* Header Section */}
@@ -114,18 +131,52 @@ const News = () => {
                 hidden: { opacity: 0, y: 50 },
                 visible: { opacity: 1, y: 0 },
               }}
+              onClick={() => openImageModal(article)}
             >
-              <a href={article.img} target="_blank" rel="noopener noreferrer">
+              <div>
                 <img
                   src={article.img}
                   alt={article.alt}
                   className="w-full h-[300px] object-cover md:h-[350px] lg:h-[400px] transition-transform transform hover:scale-105"
                 />
-              </a>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-80 pt-16"
+          onClick={closeImageModal}
+        >
+          <div className="flex flex-col items-center justify-center min-h-screen px-4 py-16">
+            <div
+              className="relative max-w-6xl mx-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeImageModal}
+                className="absolute top-4 right-4 bg-white rounded-full p-2 text-gray-800 hover:bg-gray-200 shadow-lg z-10"
+              >
+                <X size={24} />
+              </button>
+              <motion.img
+                src={selectedImage.img}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-[100vh] object-contain rounded-lg"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };
