@@ -89,14 +89,14 @@ const Team = () => {
             "Understanding the Implementation of Climate Action Plans Through Risk-Informed Governance: A Case Study of the Indian Sundarbans Delta",
         },
         {
-          name: "Dipti Paridhi Kindo (2017 – 2025)",
-          topic:
-            "Local Self-Governance: The Experiment of Panchayats (Extension to Scheduled Areas) Act in Jharkhand",
-        },
-        {
           name: "Hemant Kumar (2018 – 2025)",
           topic:
             "Rural Transformation through Peri-Urbanization and Its Impact on the Existing Local Governing Institution in Bihar, India",
+        },
+        {
+          name: "Dipti Paridhi Kindo (2017 – 2025)",
+          topic:
+            "Local Self-Governance: The Experiment of Panchayats (Extension to Scheduled Areas) Act in Jharkhand",
         },
         {
           name: "Poulomi Chakraborty (2020 – 2024)",
