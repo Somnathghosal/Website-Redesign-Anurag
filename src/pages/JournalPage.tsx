@@ -331,6 +331,15 @@ const JournalPage = () => {
     {
       title: "Regional Planning",
       papers: [
+         {
+          authors: "Kumar, H. and Ghosal, S.",
+          year: 2025,
+          title:
+            "Unravelling the Impact of Land Use Transformation on Thermal Environment Across Seasons: A Comprehensive Study of Rapidly Urbanizing Patna Planning Area, India.",
+          journal: "Environmental Science and Pollution Research",
+          details: "",
+          doi: "",
+        },
         {
           authors: "Chakraborty, P. and Ghosal, S.",
           year: 2024,
