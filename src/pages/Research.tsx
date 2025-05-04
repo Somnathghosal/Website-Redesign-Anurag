@@ -38,7 +38,7 @@ const researchData: ResearchItem[] = [
       "Public policy emphasizes inclusive healthcare and education for rural communities.",
     details:
       "Public policy emphasizes inclusive healthcare and education for rural communities. Decentralized healthcare models improve accessibility and affordability, ensuring better health outcomes. Technology and community participation play a crucial role in enhancing rural education opportunities. Addressing gaps in policy implementation leads to evidence-based solutions for sustainable development. Action research focuses on innovative frameworks that integrate education, health, and livelihood strategies.",
-  videoUrl: "https://www.youtube.com/watch?v=q3VDMkTZf1Y&t=81s",
+  videoUrl: "https://youtu.be/q3VDMkTZf1Y?si=yruxfSL-PIWHbPlE",
   },
   {
     title: "Social Forestry and Nature-Based Entrepreneurship",
