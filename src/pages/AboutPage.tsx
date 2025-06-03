@@ -194,15 +194,15 @@ const AboutPage = () => {
 
             <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <p className="font-semibold text-xl text-blue-800">
-                Sustainable Natural Resource Management: Science, Technology,
+                Sustainable Natural Resource Management: Science, Society,
                 and Policy
               </p>
             </div>
 
             <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <p className="font-semibold text-xl text-blue-800">
-                Sustainable Rural Development: Concept, Strategies, and
-                Experiences
+                Sustainable Rural Development: Policy, Planning, and
+                Management
               </p>
               <p className="text-gray-600 text-sm">(RD60002)</p>
             </div>
