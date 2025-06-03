@@ -187,7 +187,7 @@ const AboutPage = () => {
 
             <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <p className="font-semibold text-xl text-blue-800">
-                Participatory Rural Appraisal
+                Participatory Rural Appraisal: Theories and Practices
               </p>
               <p className="text-gray-600 text-sm">(RD61001)</p>
             </div>
