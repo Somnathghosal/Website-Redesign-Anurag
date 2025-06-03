@@ -204,6 +204,7 @@ const AboutPage = () => {
                 Sustainable Rural Development: Concept, Strategies, and
                 Experiences
               </p>
+              <p className="text-gray-600 text-sm">(RD60002)</p>
             </div>
 
             <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
