@@ -6,7 +6,7 @@ const Hero = () => {
     "Community Participation Action Research",
     "Science and Public Policy Integration",
     "Skill Development for Livelihood Generation",
-    "Rural Infrastructure Planning and Development (Water, Health, Sanitation, Education)",
+    "Rural Infrastructure Planning and Development (Water, Health, Education)",
     "Social Forestry and Natural Resource-Based Entrepreneurship",
   ];
 
