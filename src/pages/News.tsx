@@ -11,7 +11,7 @@ interface Article {
 const articles = [
   {
     id: 1,
-    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704537/Media/fxfl14wwn13wxiu8sxdp.jpg",
+    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704537/Media/absegtcmrpcgvfs3pwox.jpg",
     alt: "Article 1",
   },
   {
@@ -31,7 +31,7 @@ const articles = [
   },
   {
     id: 5,
-    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704537/Media/absegtcmrpcgvfs3pwox.jpg",
+    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704537/Media/fxfl14wwn13wxiu8sxdp.jpg",
     alt: "Article 5",
   },
 
