@@ -42,7 +42,7 @@ const articles = [
   },
   {
     id: 8,
-    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704536/Media/awdjr7w6rqhbws3owy3o.jpg",
+    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1744349861/ji2myvlfzsotmbfaby2x.png",
     alt: "Article 8",
   },
   {
@@ -52,7 +52,7 @@ const articles = [
   },
   {
     id: 10,
-    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1744349861/ji2myvlfzsotmbfaby2x.png",
+    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704536/Media/awdjr7w6rqhbws3owy3o.jp",
     alt: "Article 10",
   },
   {
