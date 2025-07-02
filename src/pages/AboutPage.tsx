@@ -164,7 +164,7 @@ const AboutPage = () => {
 
         {/* Awards Section */}
 
-        {/* UG & PG Courses Offered */}
+        {/* UG & PG Courses Taught */}
         <div className="max-w-6xl mx-auto mb-20 bg-gray-50 p-8 rounded-lg shadow-md">
           <div className="flex items-center mb-8">
             <BookMarked className="h-8 w-8 text-blue-800 mr-3" />
