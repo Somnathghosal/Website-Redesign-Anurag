@@ -5,92 +5,98 @@ const AboutPage = () => {
 
   // Function to navigate to blog post page
   const newsAndEvents = [
-    {
+   {
       id: 1,
-      date: "13th - 16th March 2025",
+      date: "May - July 2025",
       event:
-        'Dr. Somnath Ghosal presented a research paper and chaired a scientific session during the 16th International Conference on "Environmental and Rural Development" held at Tokyo University of Agriculture, Japan.',
+        'Dr. Somnath Ghosal visiting British Columbia, Canada to conduct research projects.',
     },
     {
       id: 2,
       date: "13th - 16th March 2025",
       event:
-        'Mr. Anand Kumar presented a paper at the 16th International Conference on "Environmental and Rural Development" held at Tokyo University of Agriculture, Japan.',
+        'Dr. Somnath Ghosal presented a research paper and chaired a scientific session during the 16th International Conference on "Environmental and Rural Development" held at Tokyo University of Agriculture, Japan.',
     },
     {
       id: 3,
+      date: "13th - 16th March 2025",
+      event:
+        'Mr. Anand Kumar presented a paper at the 16th International Conference on "Environmental and Rural Development" held at Tokyo University of Agriculture, Japan.',
+    },
+    {
+      id: 4,
       date: "2023 - 2025",
       event:
         "Dr. Somnath Ghosal received Research Associate position from University of the Fraser Valley, British Columbia, Canada.",
     },
     {
-      id: 4,
+      id: 5,
       date: "10th - 14th February 2025",
       event:
         "Dr. Somnath Ghosal delivered a research paper at the IIAS - DARPG India International Conference 2025 held at Bharat Mandapam, New Delhi.",
     },
     {
-      id: 5,
+      id: 6,
       date: "7th February 2025",
       event:
         'Dr. Somnath Ghosal was invited by TATA Steel Foundation to deliver an invited talk on, "Forest and Biodiversity Management with Focus on Role of Participatory Methods".',
     },
     {
-      id: 6,
+      id: 7,
       date: "5th - 13th February 2025",
       event:
         'Dr. Ghosal delivered invited talk at the "22nd NEP Orientation and Sensitization Programme", organized by UGC-MMTTC Mizoram University.',
     },
     {
-      id: 7,
+      id: 8,
       date: "8th - 17th January 2025",
       event:
         'Dr. Ghosal delivered invited talk at the "MMTTP-NEP Orientation and Sensitization Programme" organized by North-Eastern Hill University, Shillong.',
     },
     {
-      id: 8,
+      id: 9,
       date: "23rd September 2024",
       event:
         'Dr. Somnath Ghosal took part as an expert panellist at the consultative workshop on "Promoting Entrepreneurship, Skilling and Employment by Leveraging Demographic Dividend of the State" organized by Tripura Rural Livelihood Mission, Rural Development Department, Government of Tripura, Agartala.',
     },
     {
-      id: 9,
+      id: 10,
       date: "2023",
       event:
         'Dr. Ghosal has been offered with Outstation Chairman position for "Rural Technology, Social Organizations, and Rural Development" Thematic Panel of the 46th and 47th Indian Social Science Congress.',
     },
     {
-      id: 10,
+      id: 11,
       date: "31st July - 4th August 2023",
       event:
         'Dr. Ghosal organized international workshop on "Water-Energy-Food-Health Nexus" at the IIT Kharagpur in collaboration with the University of Edinburgh, UK (online).',
     },
     {
-      id: 11,
+      id: 12,
       date: "23rd - 25th November 2023",
       event:
         'Dr. Ghosal attended the "Industry-Academia Conclave (IAC 2023)" as an expert panellist held at NIT Jamshedpur.',
     },
     {
-      id: 12,
+      id: 13,
       date: "22nd - 28th February 2022",
       event:
         "Dr. Somnath Ghosal was invited by the Nagaland Science and Technology Council (NASTEC) to deliver an invited talk on, 'The Road Ahead for Next 25 Years of Indian Science and Technology' during the festival of Science & Technology.",
     },
     {
-      id: 13,
+      id: 14,
       date: "5th - 7th December 2019",
       event:
         'Dr. Ghosal delivered an invited talk at "4th India Water Impact Summit 2019" (IWIS), which was held at the Vigyan Bhawan, New Delhi.',
     },
     {
-      id: 14,
+      id: 15,
       date: "2018",
       event:
         "Dr. Ghosal received Copyright Certificate for 'Designing Purified Drinking Water Distribution at Nominal Cost'.",
     },
     {
-      id: 15,
+      id: 16,
       date: "26th - 28th June 2019",
       event:
         'Dr. Ghosal presented a research paper at the "4th International Conference on Public Policy" held at Concordia University, Montreal, Canada.',
@@ -174,7 +180,7 @@ const AboutPage = () => {
           </div>
           <p className="text-gray-700 mb-6 italic text-xl">
             Dr. Somnath Ghosal actively contributes to academic excellence by
-            offering a diverse range of courses for undergraduate and
+            teaching a diverse range of courses for undergraduate and
             postgraduate students.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
