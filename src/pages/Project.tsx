@@ -100,17 +100,13 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
-        {
-          title: "Reviewing the Primary School Education System of Canada",
-          period: "2023 – 2025",
-          role: "Principal Investigator",
-        },
-        {
+       {
           title:
             "Necessity of Community-Driven Hard Infrastructures for Rural Well-Being",
           period: "2023 - 2025",
           role: "Principal Investigator",
         },
+        
       ],
     },
     {
@@ -135,6 +131,16 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
+     {
+          title: "Transferability and Scaling-up of Agri-Technologies",
+          period: "2025",
+          role: "Principal Investigator",
+        },
+        {
+          title: "Pre-university Education Curriculum Transformation in British Columbia, Canada for a Changing World",
+          period: "2025",
+          role: "Principal Investigator",
+        },
         {
           title:
             "Restroom Facility Development for Female Students to Address Hygienic Practices in Rural School Premises",
