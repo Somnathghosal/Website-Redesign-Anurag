@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import FooterImageSlider from "../components/FooterImageSlider";
+import CofImage from "../assests/Cof.jpg";
 
 const conferences = [
   {
@@ -368,6 +369,10 @@ const Conferences = () => {
     {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099659/Conferences/mtcghqdfn6hy8ayxbqve.jpg",
       caption: "",
+    },
+    {
+      url: CofImage,
+      caption: "Conference Photo",
     },
   ];
   return (
