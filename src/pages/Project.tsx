@@ -1,5 +1,10 @@
 import { useState } from "react";
 import FooterImageSlider from "../components/FooterImageSlider";
+import PP1 from "../assests/PP1.jpg";
+import PP2 from "../assests/PP2.jpg";
+import PP3 from "../assests/PP3.jpg";
+import PP4 from "../assests/PP4.jpg";
+import PP5 from "../assests/PP5.jpg";
 
 const ProjectsComponent = () => {
   const [activeTab, setActiveTab] = useState("current");
@@ -94,19 +99,44 @@ const ProjectsComponent = () => {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705522/Project/twrzxitkbpqjlubdzdo8.jpg",
       caption: "",
     },
+    {
+      id: "19",
+      url: PP1,
+      caption: "Project Photo 1",
+    },
+    {
+      id: "20",
+      url: PP2,
+      caption: "Project Photo 2",
+    },
+    {
+      id: "21",
+      url: PP3,
+      caption: "Project Photo 3",
+    },
+    {
+      id: "22",
+      url: PP4,
+      caption: "Project Photo 4",
+    },
+    {
+      id: "23",
+      url: PP5,
+      caption: "Project Photo 5",
+    },
   ];
 
   const currentProjects = [
     {
       type: "Principal Investigator",
       projects: [
-       {
+        {
           title:
             "Necessity of Community-Driven Hard Infrastructures for Rural Well-Being",
           period: "2023 - 2025",
           role: "Principal Investigator",
         },
-        
+
       ],
     },
     {
@@ -131,7 +161,7 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
-     {
+        {
           title: "Transferability and Scaling-up of Agri-Technologies",
           period: "2025",
           role: "Principal Investigator",
@@ -252,22 +282,20 @@ const ProjectsComponent = () => {
             <button
               onClick={() => setActiveTab("current")}
               className={`w-1/2 py-3 text-center rounded-md font-semibold transition-colors duration-300 
-              ${
-                activeTab === "current"
+              ${activeTab === "current"
                   ? "bg-blue-600 text-white"
                   : "text-blue-700 hover:bg-blue-200"
-              }`}
+                }`}
             >
               Current Projects
             </button>
             <button
               onClick={() => setActiveTab("completed")}
               className={`w-1/2 py-3 text-center rounded-md font-semibold transition-colors duration-300 
-              ${
-                activeTab === "completed"
+              ${activeTab === "completed"
                   ? "bg-blue-600 text-white"
                   : "text-blue-700 hover:bg-blue-200"
-              }`}
+                }`}
             >
               Completed Projects
             </button>
@@ -276,61 +304,61 @@ const ProjectsComponent = () => {
           <div className="p-4 h-full overflow-y-auto">
             {activeTab === "current"
               ? currentProjects.map((projectGroup, groupIndex) => (
-                  <div key={groupIndex} className="mb-6">
-                    <h3 className="text-lg font-semibold mb-3 text-blue-800">
-                      {projectGroup.type}
-                    </h3>
-                    <div className="h-64 overflow-y-auto pr-2">
-                      {projectGroup.projects.map((project, index) => (
-                        <div
-                          key={index}
-                          className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3 
+                <div key={groupIndex} className="mb-6">
+                  <h3 className="text-lg font-semibold mb-3 text-blue-800">
+                    {projectGroup.type}
+                  </h3>
+                  <div className="h-64 overflow-y-auto pr-2">
+                    {projectGroup.projects.map((project, index) => (
+                      <div
+                        key={index}
+                        className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3 
                 hover:bg-blue-100 hover:shadow-md transition-all duration-300"
-                        >
-                          <h4 className="text-md font-medium mb-2 text-blue-900">
-                            {project.title}
-                          </h4>
-                          <div className="flex items-center space-x-3">
-                            <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">
-                              {project.role}
-                            </span>
-                            <span className="text-sm text-blue-600">
-                              {project.period}
-                            </span>
-                          </div>
+                      >
+                        <h4 className="text-md font-medium mb-2 text-blue-900">
+                          {project.title}
+                        </h4>
+                        <div className="flex items-center space-x-3">
+                          <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">
+                            {project.role}
+                          </span>
+                          <span className="text-sm text-blue-600">
+                            {project.period}
+                          </span>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
-                ))
+                </div>
+              ))
               : completedProjects.map((projectGroup, groupIndex) => (
-                  <div key={groupIndex} className="mb-6">
-                    <h3 className="text-lg font-semibold mb-3 text-blue-800">
-                      {projectGroup.type}
-                    </h3>
-                    <div className="h-64 overflow-y-auto pr-2">
-                      {projectGroup.projects.map((project, index) => (
-                        <div
-                          key={index}
-                          className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3 
+                <div key={groupIndex} className="mb-6">
+                  <h3 className="text-lg font-semibold mb-3 text-blue-800">
+                    {projectGroup.type}
+                  </h3>
+                  <div className="h-64 overflow-y-auto pr-2">
+                    {projectGroup.projects.map((project, index) => (
+                      <div
+                        key={index}
+                        className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3 
                 hover:bg-blue-100 hover:shadow-md transition-all duration-300"
-                        >
-                          <h4 className="text-md font-medium mb-2 text-blue-900">
-                            {project.title}
-                          </h4>
-                          <div className="flex items-center space-x-3">
-                            <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">
-                              {project.role}
-                            </span>
-                            <span className="text-sm text-blue-600">
-                              {project.period}
-                            </span>
-                          </div>
+                      >
+                        <h4 className="text-md font-medium mb-2 text-blue-900">
+                          {project.title}
+                        </h4>
+                        <div className="flex items-center space-x-3">
+                          <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">
+                            {project.role}
+                          </span>
+                          <span className="text-sm text-blue-600">
+                            {project.period}
+                          </span>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+              ))}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useState } from "react";
+import MediaImage from "../assests/Media.jpg";
 
 interface Article {
   id: number;
@@ -50,10 +51,15 @@ const articles = [
     img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704537/Media/jrhoibzx12rrrc24bmso.webp",
     alt: "Article 9",
   },
+  // {
+  //   id: 10,
+  //   img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704536/Media/awdjr7w6rqhbws3owy3o.jp",
+  //   alt: "Article 10",
+  // },
   {
-    id: 10,
-    img: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743704536/Media/awdjr7w6rqhbws3owy3o.jp",
-    alt: "Article 10",
+    id: 6,
+    img: MediaImage,
+    alt: "Media Coverage",
   },
   {
     id: 11,
