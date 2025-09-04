@@ -35,7 +35,7 @@ const CopyrightPage = () => {
       title: "Low-Cost Drinking Water Filtration System",
       type: "Patent",
       year: "2021",
-      status: "Filed",
+      status: "Granted",
     },
     {
       title: "Designing Purified Drinking Water Distribution at Nominal Cost",
