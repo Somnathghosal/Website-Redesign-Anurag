@@ -34,7 +34,7 @@ const CopyrightPage = () => {
     {
       title: "Low-Cost Drinking Water Filtration System",
       type: "Patent",
-      year: "2021",
+      year: "2025",
       status: "Granted",
     },
     {
