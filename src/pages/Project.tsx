@@ -130,6 +130,12 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
+       {
+          title:
+            "Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management",
+          period: "2025 – 2026",
+          role: "Principal Investigator",
+        },
         {
           title:
             "Necessity of Community-Driven Hard Infrastructures for Rural Well-Being",
