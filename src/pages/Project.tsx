@@ -139,7 +139,7 @@ const ProjectsComponent = () => {
         {
           title:
             "Necessity of Community-Driven Hard Infrastructures for Rural Well-Being",
-          period: "2023 - 2025",
+          period: "2023 - 2026",
           role: "Principal Investigator",
         },
 
