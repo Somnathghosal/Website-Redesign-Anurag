@@ -11,12 +11,18 @@ interface FooterImageSliderProps {
   slides: FooterSlide[];
   slidesToShow?: number;
   autoPlayInterval?: number;
+  // Tailwind height classes for the slide image container (e.g. "h-48 md:h-56 lg:h-64")
+  heightClass?: string;
+  // Tailwind padding-y class for the outer container (e.g. "py-12")
+  paddingYClass?: string;
 }
 
 const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
   slides,
   slidesToShow = 4,
   autoPlayInterval = 5000,
+  heightClass = "h-48 md:h-56 lg:h-64",
+  paddingYClass = "py-12",
 }) => {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -69,7 +75,7 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
   };
 
   return (
-    <div className="w-full bg-gradient-to-r from-blue-900 to-blue-800 py-12 relative overflow-hidden">
+    <div className={`w-full bg-gradient-to-r from-blue-900 to-blue-800 ${paddingYClass} relative overflow-hidden`}>
       <div className="container mx-auto px-4 relative">
         {/* Navigation buttons */}
         <button
@@ -103,7 +109,7 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
                 key={`${currentStartIndex}-${index}`}
                 className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="aspect-w-16 aspect-h-9 w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+                <div className={`aspect-w-16 aspect-h-9 w-full ${heightClass} overflow-hidden`}>
                   <img
                     src={slide.url}
                     alt={slide.alt || `Slide ${index + 1}`}

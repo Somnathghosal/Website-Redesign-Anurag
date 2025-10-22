@@ -123,51 +123,61 @@ const InvitedTalks = () => {
   ];
 
   return (
-    <>
-      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810294/se6x8imzn8ptqx0mlujq.jpg")',
-          }}
-        >
-          <div className="absolute inset-0 bg-gray-200/40"></div>
+    <div className="flex flex-col min-h-screen">
+      {/* Sticky top header (hero + subheader) */}
+      <header className="sticky top-0 z-30">
+        <div className="relative h-[36vh] flex items-center justify-center overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage:
+                'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810294/se6x8imzn8ptqx0mlujq.jpg")',
+            }}
+          >
+            <div className="absolute inset-0 bg-gray-200/40"></div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative text-center text-white px-4"
+          >
+            <h1 className="text-3xl md:text-5xl font-bold mb-2">Invited Talks</h1>
+            <div className="w-20 h-1 bg-blue-400 mx-auto mb-2"></div>
+          </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative text-center text-white px-4"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Invited Talks</h1>
-          <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
-        </motion.div>
-      </div>
-      <div className="text-center text-3xl py-5 font-bold text-blue-600 bg-gray-200">
-        <h2>Invited Talks and Presentations </h2>
-      </div>
-      <div className="relative h-auto flex flex-col items-center justify-center p-8 bg-gray-100">
-        <ul className="max-w-4xl w-full mt-8">
+        <div className="text-center text-2xl py-3 font-bold text-blue-600 bg-gray-200">
+          <h2>Invited Talks and Presentations</h2>
+        </div>
+      </header>
+
+      {/* Scrollable middle content */}
+  <main className="flex-1 overflow-auto bg-gray-100 p-8 pb-56">
+        <ul className="max-w-4xl w-full mt-8 mx-auto">
           {invitedTalks.map((talk, index) => (
             <li key={index} className="mb-6 p-4 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold text-blue-800">
-                {talk.title}
-              </h2>
+              <h2 className="text-xl font-semibold text-blue-800">{talk.title}</h2>
               <p className="text-gray-700">{talk.event}</p>
               <p className="text-gray-700">{talk.eventLocation}</p>
               <p className="text-gray-600 text-sm">{talk.date}</p>
             </li>
           ))}
         </ul>
+      </main>
+
+      {/* Fixed bottom carousel */}
+      <div className="fixed bottom-0 left-0 right-0 z-20">
+        <FooterImageSlider
+          slides={slides}
+          slidesToShow={4}
+          autoPlayInterval={3000}
+          heightClass="h-36 md:h-44 lg:h-48"
+          paddingYClass="py-6"
+        />
       </div>
-      <FooterImageSlider
-        slides={slides}
-        slidesToShow={4}
-        autoPlayInterval={3000}
-      />
-    </>
+    </div>
   );
 };
 

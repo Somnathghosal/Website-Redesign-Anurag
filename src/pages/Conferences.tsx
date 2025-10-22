@@ -377,61 +377,65 @@ const Conferences = () => {
   ];
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810294/ecbv0dyarhv3nb8gsu3g.jpg")',
-          }}
-        >
-          <div className="absolute inset-0 bg-gray-200/40"></div>
+      {/* Sticky header (hero + title) */}
+      <header className="sticky top-0 z-30">
+        <div className="relative h-[36vh] flex items-center justify-center overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage:
+                'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810294/ecbv0dyarhv3nb8gsu3g.jpg")',
+            }}
+          >
+            <div className="absolute inset-0 bg-gray-200/40"></div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="relative text-center text-white px-4"
+          >
+            <h1 className="text-3xl md:text-5xl font-bold mb-2">Conferences</h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.5 }}
+              className="w-20 h-1 bg-blue-400 mx-auto mb-2"
+            ></motion.div>
+          </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          className="relative text-center text-white px-4"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Conferences</h1>
+        <div className="text-center py-3 bg-gray-100">
           <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-20 h-1 bg-blue-400 mx-auto mb-4"
-          ></motion.div>
-        </motion.div>
-      </div>
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center mb-0"
+          >
+            <h1 className="text-2xl md:text-3xl font-bold text-blue-600">
+              List of Conferences, Seminars, and Workshops (Participated)
+            </h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.5 }}
+              className="w-24 h-1 bg-blue-400 mx-auto mt-2"
+            ></motion.div>
+          </motion.div>
+        </div>
+      </header>
 
-      {/* Content Section */}
-      <div className="flex-grow relative py-12 px-6 bg-gray-100">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-8"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4">
-            List of Conferences, Seminars, and Workshops (Participated)
-          </h1>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-24 h-1 bg-blue-400 mx-auto mb-6"
-          ></motion.div>
-        </motion.div>
-
-        <ul className="max-w-4xl mx-auto space-y-6 pb-12">
+      {/* Scrollable content area */}
+      <main className="flex-1 overflow-auto bg-gray-100 p-6 pb-56">
+        <ul className="max-w-4xl mx-auto space-y-6">
           {conferences.map((conference, index) => (
             <motion.li
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                delay: index * 0.1,
+                delay: index * 0.06,
                 duration: 0.6,
                 ease: "easeOut",
               }}
@@ -458,14 +462,18 @@ const Conferences = () => {
             </motion.li>
           ))}
         </ul>
-      </div>
+      </main>
 
-      {/* Footer Image Slider */}
-      <FooterImageSlider
-        slides={slides}
-        slidesToShow={4}
-        autoPlayInterval={3000}
-      />
+      {/* Fixed bottom carousel */}
+      <div className="fixed bottom-0 left-0 right-0 z-20">
+        <FooterImageSlider
+          slides={slides}
+          slidesToShow={4}
+          autoPlayInterval={3000}
+          heightClass="h-36 md:h-44 lg:h-48"
+          paddingYClass="py-6"
+        />
+      </div>
     </div>
   );
 };
