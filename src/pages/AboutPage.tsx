@@ -9,7 +9,7 @@ const AboutPage = () => {
       id: 17,
       date: "April 2026",
       event:
-        'Dr. Somnath Ghosal received TUM Global Incentive Fund 2025, Germany for conducting project on 'Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management'.',
+        "Dr. Somnath Ghosal received TUM Global Incentive Fund 2025, Germany for conducting project on 'Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management'.",
     },
     {
       id: 16,

@@ -35,7 +35,7 @@ const Hero = () => {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mt-10 mt-16">
-              GeoAction Research Lab
+              Ghosal <br></br> Participatory Action Research Group
             </h1>
             <div className="w-24 h-1 bg-blue-400 mx-auto my-6"></div>
             <p className="text-xl md:text-2xl text-white italic mb-3">

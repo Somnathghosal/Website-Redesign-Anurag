@@ -14,8 +14,9 @@ const Contact = () => {
               alt="GEAR - Geo-Action Research"
               className="h-28 max-h-full mb-4 mx-auto"
             />
-            <h2 className="lg:text-4xl text-3xl font-light italic mb-8 text-white text-center">
-              GeoAction Research Lab
+            <h2 className="lg:text-3xl text-3xl font-light italic mb-8 text-white text-center">
+              <span className="block">Ghosal</span>
+              <span className="block text-lg lg:text-2xl">Participatory Action Research Group</span>
             </h2>
             <p className="text-blue-200 leading-relaxed text-lg text-center">
               "Exploring innovative ideas and disseminating through technology
@@ -27,7 +28,7 @@ const Contact = () => {
           <div className="rounded-lg p-8 shadow-xl">
             <h1 className="text-3xl font-bold text-center mb-4">Contact Us</h1>
             <p className="text-lg text-center text-blue-100">
-              GeoAction Research Lab
+              Ghosal <br></br> Participatory Action Research Group
             </p>
 
             <div className="text-center ">
