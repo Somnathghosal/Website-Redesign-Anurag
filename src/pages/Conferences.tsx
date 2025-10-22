@@ -379,7 +379,7 @@ const Conferences = () => {
     <div className="flex flex-col min-h-screen">
       {/* Sticky header (hero + title) */}
       <header className="sticky top-0 z-30">
-        <div className="relative h-[36vh] flex items-center justify-center overflow-hidden">
+  <div className="relative h-[32vh] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -396,7 +396,7 @@ const Conferences = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="relative text-center text-white px-4"
           >
-            <h1 className="text-3xl md:text-5xl font-bold mb-2">Conferences</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-0 mt-5">Conferences</h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -413,7 +413,7 @@ const Conferences = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-0"
           >
-            <h1 className="text-2xl md:text-3xl font-bold text-blue-600">
+            <h1 className="text-2xl md:text-2xl font-bold text-blue-600">
               List of Conferences, Seminars, and Workshops (Participated)
             </h1>
             <motion.div

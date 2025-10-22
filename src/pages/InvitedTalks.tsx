@@ -126,7 +126,7 @@ const InvitedTalks = () => {
     <div className="flex flex-col min-h-screen">
       {/* Sticky top header (hero + subheader) */}
       <header className="sticky top-0 z-30">
-        <div className="relative h-[36vh] flex items-center justify-center overflow-hidden">
+        <div className="relative h-[32vh] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -143,7 +143,7 @@ const InvitedTalks = () => {
             transition={{ duration: 0.8 }}
             className="relative text-center text-white px-4"
           >
-            <h1 className="text-3xl md:text-5xl font-bold mb-2">Invited Talks</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 mt-5">Invited Talks</h1>
             <div className="w-20 h-1 bg-blue-400 mx-auto mb-2"></div>
           </motion.div>
         </div>
