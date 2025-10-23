@@ -15,6 +15,8 @@ interface FooterImageSliderProps {
   heightClass?: string;
   // Tailwind padding-y class for the outer container (e.g. "py-12")
   paddingYClass?: string;
+  // Enable smooth continuous scrolling (marquee-style)
+  smooth?: boolean;
 }
 
 const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
@@ -23,15 +25,26 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
   autoPlayInterval = 5000,
   heightClass = "h-48 md:h-56 lg:h-64",
   paddingYClass = "py-12",
+  smooth = true,
 }) => {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isSmoothActive, setIsSmoothActive] = useState(smooth && slides.length > slidesToShow);
+  const resumeTimerRef = React.useRef<number | null>(null);
 
   const totalSlides = slides.length;
   const maxStartIndex = Math.max(0, totalSlides - slidesToShow);
 
   const goToNext = useCallback(() => {
     if (isTransitioning) return;
+
+    // If smooth marquee is active, temporarily disable it so we can step
+    if (isSmoothActive) {
+      setIsSmoothActive(false);
+      if (resumeTimerRef.current) window.clearTimeout(resumeTimerRef.current);
+      // We'll resume after a short pause (1s)
+      resumeTimerRef.current = window.setTimeout(() => setIsSmoothActive(true), 1000);
+    }
 
     setIsTransitioning(true);
     setCurrentStartIndex((prevIndex) => {
@@ -45,6 +58,12 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
   const goToPrev = useCallback(() => {
     if (isTransitioning) return;
 
+    if (isSmoothActive) {
+      setIsSmoothActive(false);
+      if (resumeTimerRef.current) window.clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = window.setTimeout(() => setIsSmoothActive(true), 1000);
+    }
+
     setIsTransitioning(true);
     setCurrentStartIndex((prevIndex) => {
       const nextIndex = prevIndex - 1;
@@ -54,11 +73,19 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
     setTimeout(() => setIsTransitioning(false), 500);
   }, [maxStartIndex, isTransitioning]);
 
-  // Ensure continuous movement at regular intervals
+  // Ensure continuous movement at regular intervals when NOT in smooth mode
   useEffect(() => {
+    if (isSmoothActive) return;
     const slideInterval = setInterval(goToNext, autoPlayInterval);
     return () => clearInterval(slideInterval);
-  }, [autoPlayInterval, goToNext]);
+  }, [autoPlayInterval, goToNext, isSmoothActive]);
+
+  // Cleanup resume timer on unmount or when slides change
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current) window.clearTimeout(resumeTimerRef.current);
+    };
+  }, []);
 
   // Calculate which slides to show
   const getVisibleSlides = () => {
@@ -96,58 +123,91 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
 
         {/* Slider content */}
         <div className="overflow-hidden mx-12">
-          <div
-            className="transition-transform duration-500 ease-out"
-            style={{
-              display: "grid",
-              gridTemplateColumns: `repeat(${slidesToShow}, minmax(0, 1fr))`,
-              gap: "1rem",
-            }}
-          >
-            {getVisibleSlides().map((slide, index) => (
-              <div
-                key={`${currentStartIndex}-${index}`}
-                className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className={`aspect-w-16 aspect-h-9 w-full ${heightClass} overflow-hidden`}>
-                  <img
-                    src={slide.url}
-                    alt={slide.alt || `Slide ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                </div>
-                {slide.title && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-3 text-sm md:text-base transform transition-transform duration-300 translate-y-0">
-                    <h3 className="font-medium">{slide.title}</h3>
+          {isSmoothActive ? (
+            <SmoothMarquee slides={slides} slidesToShow={slidesToShow} heightClass={heightClass} autoPlayInterval={autoPlayInterval} />
+          ) : (
+            <div
+              className="transition-transform duration-500 ease-out"
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${slidesToShow}, minmax(0, 1fr))`,
+                gap: "1rem",
+              }}
+            >
+              {getVisibleSlides().map((slide, index) => (
+                <div
+                  key={`${currentStartIndex}-${index}`}
+                  className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className={`aspect-w-16 aspect-h-9 w-full ${heightClass} overflow-hidden`}>
+                    <img
+                      src={slide.url}
+                      alt={slide.alt || `Slide ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  {slide.title && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-3 text-sm md:text-base transform transition-transform duration-300 translate-y-0">
+                      <h3 className="font-medium">{slide.title}</h3>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Pagination dots */}
-        <div className="flex justify-center mt-6 space-x-2">
-          {Array.from({ length: maxStartIndex + 1 }).map((_, index) => (
-            <button
-              key={index}
-              className={`w-2 h-2 rounded-full transition-all duration-300 focus:outline-none ${
-                index === currentStartIndex
-                  ? "bg-white w-4"
-                  : "bg-white/50 hover:bg-white/70"
-              }`}
-              onClick={() => {
-                setIsTransitioning(true);
-                setCurrentStartIndex(index);
-                setTimeout(() => setIsTransitioning(false), 500);
-              }}
-              aria-label={`Go to slide set ${index + 1}`}
-            />
-          ))}
-        </div>
+        {/* Pagination dots removed per design — arrows remain for navigation */}
       </div>
     </div>
   );
 };
 
 export default FooterImageSlider;
+
+// SmoothMarquee: renders duplicated slides and animates them leftwards for an infinite belt effect
+const SmoothMarquee: React.FC<{
+  slides: FooterSlide[];
+  slidesToShow: number;
+  heightClass: string;
+  autoPlayInterval: number;
+}> = ({ slides, slidesToShow, heightClass, autoPlayInterval }) => {
+  // duration is proportional to number of slides to keep speed consistent
+  const durationSeconds = Math.max(10, (slides.length / slidesToShow) * (autoPlayInterval / 1000));
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div
+        className="flex will-change-transform animate-marquee gap-1"
+        style={{ animationDuration: `${durationSeconds}s` }}
+      >
+        {[...slides, ...slides].map((slide, idx) => (
+          <div
+            key={idx}
+            className="flex-none px-2" /* padding complements gap so visual spacing matches previous grid */
+            style={{ width: `${100 / slidesToShow}%` }}
+          >
+            <div className="group relative rounded-xl shadow-md bg-white overflow-hidden flex items-center justify-center">
+              <div className={`w-full ${heightClass} overflow-hidden flex items-center justify-center`} style={{ aspectRatio: '1/1' }}>
+                <img src={slide.url} alt={slide.alt || `Slide ${idx + 1}`} className="w-full h-full object-cover rounded-xl" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation-name: marquee;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        .animate-marquee:hover { animation-play-state: paused; }
+      `}</style>
+    </div>
+  );
+};
