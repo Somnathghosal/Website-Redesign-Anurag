@@ -158,7 +158,7 @@ const AboutPage = () => {
                     University of the Fraser Valley and many other leading
                     universities and research institutes in India and abroad.
                     Additionally, he plays a key role in the sensitization of
-                    the National Education Policy for the Government of India.
+                    the National Education Policy for Government of India. Dr. Ghosal is a core committee member of the Scheme for Promotion of Academic and Research Collaboration (SPARC).
                   </p>{" "}
                   <br></br>
                   Dr. Ghosal's work is deeply rooted in participatory action
