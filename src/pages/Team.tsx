@@ -129,6 +129,11 @@ const Team = () => {
       icon: <GraduationCap className="mr-2 text-teal-600" />,
       scholars: [
         {
+          name: "Sarayu Gosika, Bhukya Prakash",
+          topic:
+            "Digital Marketplace Development for Rural and Tribal Artisans",
+        },
+        {
           name: "Rishikesh Maurya",
           topic:
             "PM 2.5 Prediction for 34 States in India by Using Multivariate Time Series (LSTM) and Deployment on Streamlit",

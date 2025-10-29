@@ -15,25 +15,21 @@ interface ImageSliderProps {
 const ImageSlider: React.FC<ImageSliderProps> = ({
   slides,
   autoPlayInterval = 4000,
-  height = "h-[300px] md:h-[500px]",
-  maxWidth = "max-w-6xl",
+  height = "h-[350px] md:h-[600px]",
+  maxWidth = "max-w-4xl", // narrower slider
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+  const goToSlide = (index: number) => setCurrentIndex(index);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex(isFirstSlide ? slides.length - 1 : currentIndex - 1);
   };
 
   const goToNext = () => {
     const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex(isLastSlide ? 0 : currentIndex + 1);
   };
 
   useEffect(() => {
@@ -43,28 +39,24 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   return (
     <div
-      className={`relative w-full ${maxWidth} mx-auto my-12 px-4 md:px-0 ${height}`}
+      className={`relative w-full ${maxWidth} mx-auto my-12 px-4 md:px-0 ${height} rounded-xl overflow-hidden`}
     >
-      <div className="w-full h-full bg-white flex items-center justify-center">
-        <div
-          className="max-w-full max-h-full bg-center bg-contain bg-no-repeat duration-1000 transition-opacity"
-          style={{
-            backgroundImage: `url(${slides[currentIndex].url})`,
-            width: "100%",
-            height: "100%",
-            opacity: 1,
-          }}
-        >
-          {slides[currentIndex].caption && (
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 text-center">
-              {slides[currentIndex].caption}
-            </div>
-          )}
-        </div>
+      {/* Image container */}
+      <div
+        className="w-full h-full bg-center bg-cover duration-700 transition-all"
+        style={{
+          backgroundImage: `url(${slides[currentIndex].url})`,
+        }}
+      >
+        {slides[currentIndex].caption && (
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 text-center text-sm md:text-base">
+            {slides[currentIndex].caption}
+          </div>
+        )}
       </div>
 
       {/* Left Arrow */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-6 text-white cursor-pointer">
+      <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-6 text-white cursor-pointer">
         <button
           onClick={goToPrevious}
           className="p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
@@ -87,7 +79,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
       </div>
 
       {/* Right Arrow */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-6 text-white cursor-pointer">
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-6 text-white cursor-pointer">
         <button
           onClick={goToNext}
           className="p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
@@ -115,8 +107,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
-              currentIndex === index ? "bg-white" : "bg-white bg-opacity-50"
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
+              currentIndex === index
+                ? "bg-white"
+                : "bg-white bg-opacity-50 hover:bg-opacity-80"
             }`}
           ></button>
         ))}

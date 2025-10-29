@@ -34,9 +34,13 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mt-10 mt-16">
-              Ghosal <br></br> Participatory Action Research Group
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mt-10 mt-16 leading-relaxed">
+              Ghosal <br />
+              <span className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                Participatory Action Research Group
+              </span>
             </h1>
+
             <div className="w-24 h-1 bg-blue-400 mx-auto my-6"></div>
             <p className="text-xl md:text-2xl text-white italic mb-3">
               "Empowering Rural Communities Through Participatory Action
