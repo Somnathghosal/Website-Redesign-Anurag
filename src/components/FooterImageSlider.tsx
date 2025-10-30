@@ -23,8 +23,8 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
   slides,
   slidesToShow = 4,
   autoPlayInterval = 5000,
-  heightClass = "h-48 md:h-56 lg:h-64",
-  paddingYClass = "py-12",
+  heightClass = "h-20 md:h-32 lg:h-32", // Reduced default height
+  paddingYClass = "py-10",
   smooth = true,
 }) => {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
@@ -137,13 +137,13 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
               {getVisibleSlides().map((slide, index) => (
                 <div
                   key={`${currentStartIndex}-${index}`}
-                  className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+                  className="group relative rounded-xl shadow-md bg-white overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 max-w-[240px] w-full" // Increased width
                 >
-                  <div className={`aspect-w-16 aspect-h-9 w-full ${heightClass} overflow-hidden`}>
+                  <div className={`aspect-[1/1] w-full h-full ${heightClass} overflow-hidden flex items-center justify-center`}>
                     <img
                       src={slide.url}
                       alt={slide.alt || `Slide ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 mx-auto"
                     />
                   </div>
                   {slide.title && (
@@ -165,31 +165,39 @@ const FooterImageSlider: React.FC<FooterImageSliderProps> = ({
 
 export default FooterImageSlider;
 
-// SmoothMarquee: renders duplicated slides and animates them leftwards for an infinite belt effect
 const SmoothMarquee: React.FC<{
   slides: FooterSlide[];
   slidesToShow: number;
   heightClass: string;
   autoPlayInterval: number;
-}> = ({ slides, slidesToShow, heightClass, autoPlayInterval }) => {
-  // duration is proportional to number of slides to keep speed consistent
-  const durationSeconds = Math.max(10, (slides.length / slidesToShow) * (autoPlayInterval / 1000));
+}> = ({ slides, slidesToShow, autoPlayInterval, heightClass }) => {
+  const totalSlides = slides.length;
+  const durationSeconds = Math.max(
+    15,
+    (totalSlides / slidesToShow) * (autoPlayInterval / 300)
+  );
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden py-4">
       <div
-        className="flex will-change-transform animate-marquee gap-1"
-        style={{ animationDuration: `${durationSeconds}s` }}
+        className="flex animate-marquee gap-5 px-4"
+        style={{
+          animationDuration: `${durationSeconds}s`,
+          width: `${(totalSlides * 2 * 100) / slidesToShow}%`,
+        }}
       >
         {[...slides, ...slides].map((slide, idx) => (
           <div
             key={idx}
-            className="flex-none px-2" /* padding complements gap so visual spacing matches previous grid */
-            style={{ width: `${100 / slidesToShow}%` }}
+            className="flex-none max-w-[240px] w-full" // Increased width
           >
-            <div className="group relative rounded-xl shadow-md bg-white overflow-hidden flex items-center justify-center">
-              <div className={`w-full ${heightClass} overflow-hidden flex items-center justify-center`} style={{ aspectRatio: '1/1' }}>
-                <img src={slide.url} alt={slide.alt || `Slide ${idx + 1}`} className="w-full h-full object-cover rounded-xl" />
+            <div className="group relative rounded-xl shadow-md bg-white overflow-hidden">
+              <div className={`w-full aspect-[1/1] ${heightClass} overflow-hidden flex items-center justify-center`}>
+                <img
+                  src={slide.url}
+                  alt={slide.alt || `Slide ${idx + 1}`}
+                  className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105 mx-auto"
+                />
               </div>
             </div>
           </div>
@@ -198,15 +206,17 @@ const SmoothMarquee: React.FC<{
 
       <style>{`
         @keyframes marquee {
-          0% { transform: translateX(0%); }
+          0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
+
         .animate-marquee {
-          animation-name: marquee;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
+          animation: marquee linear infinite;
         }
-        .animate-marquee:hover { animation-play-state: paused; }
+
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
       `}</style>
     </div>
   );

@@ -378,8 +378,8 @@ const Conferences = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Sticky header (hero + title) */}
-      <header className="sticky top-0 z-30">
-  <div className="relative h-[32vh] flex items-center justify-center overflow-hidden">
+      <header className="sticky top-20 z-30">
+        <div className="relative h-20 md:h-28 lg:h-28 flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -427,7 +427,7 @@ const Conferences = () => {
       </header>
 
       {/* Scrollable content area */}
-      <main className="flex-1 overflow-auto bg-gray-100 p-6 pb-56">
+      <main className="flex-1 mt-8 overflow-auto bg-gray-100 p-6 pb-56">
         <ul className="max-w-4xl mx-auto space-y-6">
           {conferences.map((conference, index) => (
             <motion.li
@@ -470,7 +470,7 @@ const Conferences = () => {
           slides={slides}
           slidesToShow={4}
           autoPlayInterval={3000}
-          heightClass="h-36 md:h-44 lg:h-48"
+          heightClass="h-36 md:h-44 lg:h-40"
           paddingYClass="py-6"
         />
       </div>
