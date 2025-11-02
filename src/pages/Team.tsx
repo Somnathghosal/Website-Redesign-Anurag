@@ -129,9 +129,14 @@ const Team = () => {
       icon: <GraduationCap className="mr-2 text-teal-600" />,
       scholars: [
         {
+          name: "Rohit Vannam, Gopu Abhinav Reddy",
+          topic:
+            "Researching rural crafts for better livelihood",
+        },
+        {
           name: "Sarayu Gosika, Bhukya Prakash",
           topic:
-            "Digital Marketplace Development for Rural and Tribal Artisans",
+            "Technical solutions for crafts marketing",
         },
         {
           name: "Rishikesh Maurya",
