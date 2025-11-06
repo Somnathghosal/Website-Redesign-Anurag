@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import FooterImageSlider from "../components/FooterImageSlider";
-import CofImage from "../assests/Cof.jpg";
+import Img1 from "../assests/img1.jpg";
+import Img2 from "../assests/img2.jpg";
 
 const conferences = [
   {
@@ -342,10 +343,10 @@ const Conferences = () => {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099669/Conferences/gdjbkpakbanf7cs7kerf.jpg",
       caption: "",
     },
-    {
-      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099668/Conferences/reewv11tczta0nvz9f3l.jpg",
-      caption: "",
-    },
+    // {
+    //   url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099668/Conferences/reewv11tczta0nvz9f3l.jpg",
+    //   caption: "",
+    // },
     {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099665/Conferences/ogqnpdwijzfufedgo5w9.jpg",
       caption: "",
@@ -370,9 +371,17 @@ const Conferences = () => {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099659/Conferences/mtcghqdfn6hy8ayxbqve.jpg",
       caption: "",
     },
+    // {
+    //   url: CofImage,
+    //   caption: "Conference Photo",
+    // },
     {
-      url: CofImage,
-      caption: "Conference Photo",
+      url: Img1,
+      caption: "",
+    },
+    {
+      url: Img2,
+      caption: "",
     },
   ];
   return (
