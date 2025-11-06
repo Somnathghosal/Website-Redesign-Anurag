@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Eye } from "lucide-react";
 
 const ANIMATION_DURATION_MS = 800;
@@ -43,12 +43,12 @@ const VisitorCounter = () => {
     }, []);
 
     // Global badge (no JS API calls)
-    const badgeUrl = useMemo(() => {
-        const origin = typeof window !== "undefined" ? window.location.origin : "https://example.com";
-        return `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=${encodeURIComponent(
-            origin
-        )}&count_bg=%236AA6F8&title_bg=%23587DB2&title=Visitors&edge_flat=false`;
-    }, []);
+    // const badgeUrl = useMemo(() => {
+    //     const origin = typeof window !== "undefined" ? window.location.origin : "https://example.com";
+    //     return `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=${encodeURIComponent(
+    //         origin
+    //     )}&count_bg=%236AA6F8&title_bg=%23587DB2&title=Visitors&edge_flat=false`;
+    // }, []);
 
     return (
         <div className="mt-4 text-center">
