@@ -1,5 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { Twitter, Youtube } from "lucide-react";
+import VisitorCounter from "./VisitorCounter";
 
 const Contact = () => {
   return (
@@ -82,6 +83,8 @@ const Contact = () => {
                 reserved.
               </p>
             </div>
+
+            <VisitorCounter />
           </div>
         </div>
       </div>
