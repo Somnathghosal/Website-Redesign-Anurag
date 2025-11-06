@@ -1,48 +1,72 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Eye } from "lucide-react";
 
-// Tracks and displays total website visits using CountAPI (no backend required)
-// Uses sessionStorage to prevent multiple increments within a single browser session
+const ANIMATION_DURATION_MS = 800;
+
+// Combines a per-device animated counter (localStorage) with a global badge.
 const VisitorCounter = () => {
-    const [count, setCount] = useState<number | null>(null);
-    const [error, setError] = useState<string | null>(null);
+    // Per-device (this browser) count with animation
+    const [visitCount, setVisitCount] = useState<number>(0); // retained for potential future use
+    const [displayedCount, setDisplayedCount] = useState<number>(0);
+    const animationRef = useRef<number | null>(null);
 
     useEffect(() => {
-        const namespace = "ghosal-parg-site"; // change if you want a different namespace
-        const key = "total-visits";
+        try {
+            const key = "site_visit_count";
+            const stored = localStorage.getItem(key);
+            const current = stored ? parseInt(stored, 10) || 0 : 0;
+            const next = current + 1;
+            localStorage.setItem(key, String(next));
+            setVisitCount(next);
 
-        const incrementOncePerSession = async () => {
-            try {
-                const hasVisitedThisSession = sessionStorage.getItem("visit-counted");
-                const endpoint = hasVisitedThisSession
-                    ? `https://countapi.xyz/get/${namespace}/${key}`
-                    : `https://countapi.xyz/hit/${namespace}/${key}`;
-
-                const response = await fetch(endpoint, { cache: "no-store" });
-                if (!response.ok) throw new Error(`CountAPI error ${response.status}`);
-                const data = await response.json();
-                if (typeof data?.value === "number") {
-                    setCount(data.value);
-                } else {
-                    throw new Error("Invalid response shape");
+            const start = performance.now();
+            const from = current;
+            const to = next;
+            const step = (time: number) => {
+                const elapsed = time - start;
+                const t = Math.min(1, elapsed / ANIMATION_DURATION_MS);
+                const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+                const value = Math.round(from + (to - from) * eased);
+                setDisplayedCount(value);
+                if (t < 1) {
+                    animationRef.current = requestAnimationFrame(step);
                 }
-                if (!hasVisitedThisSession) {
-                    sessionStorage.setItem("visit-counted", "1");
-                }
-            } catch (e) {
-                console.error("VisitorCounter failed:", e);
-                setError("--");
-            }
+            };
+            animationRef.current = requestAnimationFrame(step);
+        } catch {
+            setVisitCount(1);
+            setDisplayedCount(1);
+        }
+        return () => {
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
         };
+    }, []);
 
-        incrementOncePerSession();
+    // Global badge (no JS API calls)
+    const badgeUrl = useMemo(() => {
+        const origin = typeof window !== "undefined" ? window.location.origin : "https://example.com";
+        return `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=${encodeURIComponent(
+            origin
+        )}&count_bg=%236AA6F8&title_bg=%23587DB2&title=Visitors&edge_flat=false`;
     }, []);
 
     return (
         <div className="mt-4 text-center">
-            <span className="text-sm text-blue-200">Visitors: </span>
-            <span className="text-sm font-semibold text-white">
-                {count !== null ? count.toLocaleString() : error ?? "..."}
-            </span>
+            <div className="inline-flex items-center gap-2 text-blue-100">
+                <Eye className="h-4 w-4" />
+                <span className="text-sm">Visitors:</span>
+                <span className="text-sm font-semibold text-white" title={`Device visits: ${visitCount}`}>
+                    {displayedCount.toLocaleString()}
+                </span>
+            </div>
+            <div className="mt-2">
+                {/* <img
+                    src={badgeUrl}
+                    alt="Visitor count"
+                    className="inline-block align-middle opacity-90"
+                    style={{ height: 18 }}
+                /> */}
+            </div>
         </div>
     );
 };
