@@ -131,12 +131,12 @@ const Team = () => {
         {
           name: "Rohit Vannam, Gopu Abhinav Reddy",
           topic:
-            "Researching rural crafts for better livelihood",
+            "Researching the conservation of indegenous art work",
         },
         {
           name: "Sarayu Gosika, Bhukya Prakash",
           topic:
-            "Technical solutions for crafts marketing",
+            "Reaching out to the Last with advanced technical solutions",
         },
         {
           name: "Rishikesh Maurya",
