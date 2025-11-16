@@ -56,7 +56,7 @@ const CopyrightPage = () => {
               'url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
           }}
         >
-          <div className="absolute inset-0 bg-gray-200/40"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <motion.div

@@ -1,187 +1,73 @@
-import React, { useState, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// Define the structure for collaborator logos
-interface CollaboratorLogo {
-  name: string;
-  logoUrl: string;
-  websiteUrl?: string;
-}
+import React from "react";
+import StandardSlider from "../components/StandardSlider";
 
 const Collaboration: React.FC = () => {
-  // Predefined objects for academic and industry collaborators
-  const [academicCollaborators] = useState<CollaboratorLogo[]>([
+  // Transform collaborators to match StandardSlider interface
+  const academicSlides = [
     {
-      name: "University 1",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140615/Academic/x2wbwc200mw045vx2kuf.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140615/Academic/x2wbwc200mw045vx2kuf.png",
+      alt: "University 1",
     },
     {
-      name: "University 2",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705063/vpywcg59hp8hdaj4bsi3.jpg", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705063/vpywcg59hp8hdaj4bsi3.jpg",
+      alt: "University 2",
     },
     {
-      name: "University 3",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705185/Media/lack2kflobaarq1xwwha.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705185/Media/lack2kflobaarq1xwwha.png",
+      alt: "University 3",
     },
     {
-      name: "University 4",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705296/Media/rxbsfkqk4e6dkxhduvzl.jpg", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743705296/Media/rxbsfkqk4e6dkxhduvzl.jpg",
+      alt: "University 4",
     },
     {
-      name: "University 5",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/ymetzmva73wd5oorlr1l.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/ymetzmva73wd5oorlr1l.png",
+      alt: "University 5",
     },
     {
-      name: "University 6",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/uowlixutpgz2dmcnlebb.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/uowlixutpgz2dmcnlebb.png",
+      alt: "University 6",
     },
     {
-      name: "University 7",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/wihoafzwmmjskqo2p9vq.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/wihoafzwmmjskqo2p9vq.png",
+      alt: "University 7",
     },
     {
-      name: "University 8",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/dc5f6cdp0ojvpfkvuxse.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140614/Academic/dc5f6cdp0ojvpfkvuxse.png",
+      alt: "University 8",
     },
     {
-      name: "University 9",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140613/Academic/g1wblh3rydtpf4m7hyir.jpg", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140613/Academic/g1wblh3rydtpf4m7hyir.jpg",
+      alt: "University 9",
     },
     {
-      name: "University 10",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140613/Academic/f0xct9o0ouway7wcdbtq.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140613/Academic/f0xct9o0ouway7wcdbtq.png",
+      alt: "University 10",
     },
     {
-      name: "University 11",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140613/Academic/jc0usicjsxobdostseut.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140613/Academic/jc0usicjsxobdostseut.png",
+      alt: "University 11",
     },
-    // Add more academic collaborators as needed
-  ]);
+  ];
 
-  const [industryCollaborators] = useState<CollaboratorLogo[]>([
+  const industrySlides = [
     {
-      name: "Company 1",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/j09ocu9zbadsf8qwoebn.webp", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/j09ocu9zbadsf8qwoebn.webp",
+      alt: "Company 1",
     },
     {
-      name: "Company 2",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/zefmkwk3fdbgb4o7pgz1.jpg", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/zefmkwk3fdbgb4o7pgz1.jpg",
+      alt: "Company 2",
     },
     {
-      name: "Company 2",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/d3tnhx0qalxnz4jxfryl.png", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/d3tnhx0qalxnz4jxfryl.png",
+      alt: "Company 3",
     },
     {
-      name: "Company 2",
-      logoUrl:
-        "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/lanjt77irxgvjmvjthri.jpg", // You'll replace this with actual logo URL
-      websiteUrl: "",
+      url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743140574/Industry/lanjt77irxgvjmvjthri.jpg",
+      alt: "Company 4",
     },
-    // Add more industry collaborators as needed
-  ]);
-
-  // Refs for scrolling
-  const academicScrollRef = useRef<HTMLDivElement>(null);
-  const industryScrollRef = useRef<HTMLDivElement>(null);
-
-  // Scroll function
-  const scroll = (
-    ref: React.RefObject<HTMLDivElement>,
-    direction: "left" | "right"
-  ) => {
-    if (ref.current) {
-      const scrollAmount = 250;
-      ref.current.scrollBy({
-        left: direction === "right" ? scrollAmount : -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Render logo component
-  const renderLogos = (
-    logos: CollaboratorLogo[],
-    ref: React.RefObject<HTMLDivElement>
-  ) => (
-    <div className="relative w-full">
-      <div
-        ref={ref}
-        className="flex overflow-x-scroll scrollbar-hide space-x-6 py-4 px-4 scroll-smooth"
-        style={{
-          scrollBehavior: "smooth",
-          WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS
-          msOverflowStyle: "none", // IE and Edge
-          scrollbarWidth: "none", // Firefox
-        }}
-      >
-        {logos.map((collaborator, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-40 h-28 flex items-center justify-center 
-                       bg-blue-50 rounded-lg shadow-md hover:shadow-xl transition-all 
-                       duration-300 transform hover:scale-105 cursor-pointer 
-                       border border-blue-100 hover:border-blue-200"
-            onClick={() =>
-              collaborator.websiteUrl &&
-              window.open(collaborator.websiteUrl, "_blank")
-            }
-          >
-            <img
-              src={collaborator.logoUrl || "/api/placeholder/200/100"}
-              alt={collaborator.name}
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={() => scroll(ref, "left")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 
-                   bg-blue-100/70 hover:bg-blue-100/90 rounded-full 
-                   p-2 shadow-md z-10"
-      >
-        <ChevronLeft className="text-blue-700" />
-      </button>
-      <button
-        onClick={() => scroll(ref, "right")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 
-                   bg-blue-100/70 hover:bg-blue-100/90 rounded-full 
-                   p-2 shadow-md z-10"
-      >
-        <ChevronRight className="text-blue-700" />
-      </button>
-    </div>
-  );
+  ];
 
   return (
     <div
@@ -198,7 +84,17 @@ const Collaboration: React.FC = () => {
         <h3 className="text-2xl font-semibold text-center mb-8 text-blue-800">
           Academic Partners
         </h3>
-        {renderLogos(academicCollaborators, academicScrollRef)}
+        <StandardSlider
+          slides={academicSlides}
+          slidesToShow={4}
+          autoPlayInterval={4000}
+          heightClass="h-28 md:h-32 lg:h-36"
+          showNavigation={true}
+          showPagination={false}
+          loop={true}
+          spaceBetween={16}
+          slideClassName="bg-blue-50 rounded-lg border border-blue-100"
+        />
       </div>
 
       {/* Industry Collaborators Section */}
@@ -206,7 +102,17 @@ const Collaboration: React.FC = () => {
         <h3 className="text-2xl font-semibold text-center mb-8 text-blue-800">
           Industry Partners
         </h3>
-        {renderLogos(industryCollaborators, industryScrollRef)}
+        <StandardSlider
+          slides={industrySlides}
+          slidesToShow={4}
+          autoPlayInterval={4000}
+          heightClass="h-28 md:h-32 lg:h-36"
+          showNavigation={true}
+          showPagination={false}
+          loop={true}
+          spaceBetween={16}
+          slideClassName="bg-blue-50 rounded-lg border border-blue-100"
+        />
       </div>
     </div>
   );

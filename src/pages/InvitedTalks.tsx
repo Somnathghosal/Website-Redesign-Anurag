@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import FooterImageSlider from "../components/FooterImageSlider";
+import StandardFooterSlider from "../components/StandardFooterSlider";
 
 const invitedTalks = [
   {
@@ -126,7 +126,7 @@ const InvitedTalks = () => {
     <div className="flex flex-col min-h-screen">
       {/* Sticky top header (hero + subheader) */}
       <header className="sticky top-20 z-30">
-        <div className="relative h-20 md:h-28 lg:h-28 flex items-center justify-center overflow-hidden">
+        <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -134,7 +134,7 @@ const InvitedTalks = () => {
                 'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810294/se6x8imzn8ptqx0mlujq.jpg")',
             }}
           >
-            <div className="absolute inset-0 bg-gray-200/40"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
 
           <motion.div
@@ -148,7 +148,7 @@ const InvitedTalks = () => {
           </motion.div>
         </div>
 
-        <div className="text-center text-2xl py-3 font-bold text-blue-600 bg-gray-200">
+        <div className="text-center text-2xl py-3 font-bold text-white bg-gray-800">
           <h2>Invited Talks and Presentations</h2>
         </div>
       </header>
@@ -169,11 +169,11 @@ const InvitedTalks = () => {
 
       {/* Fixed bottom carousel */}
       <div className="fixed bottom-0 left-0 right-0 z-20">
-        <FooterImageSlider
+        <StandardFooterSlider
           slides={slides}
           slidesToShow={4}
           autoPlayInterval={3000}
-          heightClass="h-36 md:h-44 lg:h-40"
+          heightClass="h-32 md:h-36 lg:h-40"
           paddingYClass="py-6"
         />
       </div>

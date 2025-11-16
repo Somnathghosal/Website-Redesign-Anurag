@@ -85,7 +85,7 @@ const Books = () => {
               'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810293/r3sazfzbarnt1xo2jrde.jpg")',
           }}
         >
-          <div className="absolute inset-0 bg-gray-200/40"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <motion.div

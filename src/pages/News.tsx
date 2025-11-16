@@ -99,7 +99,7 @@ const News = () => {
               'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810517/ufc4i8yvpx2g3cfhcb1o.jpg")',
           }}
         >
-          <div className="absolute inset-0 bg-gray-200/40"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <motion.div

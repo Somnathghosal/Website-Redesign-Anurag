@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FooterImageSlider from "../components/FooterImageSlider";
+import StandardFooterSlider from "../components/StandardFooterSlider";
 import PP1 from "../assests/PP1.jpg";
 import PP2 from "../assests/PP2.jpg";
 import PP3 from "../assests/PP3.jpg";
@@ -368,7 +368,7 @@ const ProjectsComponent = () => {
           </div>
         </div>
       </div>
-      <FooterImageSlider
+      <StandardFooterSlider
         slides={slides}
         slidesToShow={4} // Number of logos to show at once
         autoPlayInterval={3000} // Change logo every 3 seconds

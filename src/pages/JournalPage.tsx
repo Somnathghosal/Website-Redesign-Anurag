@@ -441,7 +441,7 @@ const JournalPage = () => {
               'url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
           }}
         >
-          <div className="absolute inset-0 bg-gray-200/40"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <motion.div
