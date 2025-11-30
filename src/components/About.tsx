@@ -1,13 +1,13 @@
 const About = () => {
   return (
-    <div className="pt-8 lg:pt-16 bg-white">
-      <div className="container mx-auto px-2 md:px-3">
+    <div className="pt-16 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col">
-          <div className="w-full text-justify max-h-[446px] md:max-h-[696px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-blue-50">
+          <div className="w-full text-justify">
             <h2 className="text-3xl font-bold text-blue-900 mb-6">
               Our Vision
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            <p className="text-gray-700 text-xl leading-relaxed mb-6">
               It is rooted in a profound commitment to transformative social
               change, focusing on empowering marginalized communities through a
               holistic approach to development. We are dedicated to
@@ -19,7 +19,7 @@ const About = () => {
               humanitarian efforts.
             </p>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            <p className="text-gray-700 text-xl leading-relaxed mb-6">
               At the core of our vision lies a deep understanding that
               sustainable progress requires a multifaceted approach. We aim to{" "}
               <span className="font-semibold">
@@ -31,7 +31,7 @@ const About = () => {
               perpetuate inequality between urban and rural landscapes.
             </p>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            <p className="text-gray-700 text-xl leading-relaxed mb-6">
               Our comprehensive strategy focuses on innovative, context-specific
               interventions that are designed to be scalable and adaptable. We
               believe in leveraging cutting-edge technologies and sustainable
@@ -45,7 +45,7 @@ const About = () => {
               and responsive to local needs.
             </p>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            <p className="text-gray-700 text-xl leading-relaxed mb-6">
               Ultimately, we envision a future where geographical boundaries and
               economic constraints no longer dictate an individual's potential.
               By providing equitable access to knowledge, resources, and

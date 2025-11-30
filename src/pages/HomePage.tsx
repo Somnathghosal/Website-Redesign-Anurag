@@ -53,24 +53,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-
-      {/* Desktop: Slideshow left, Our Vision right | Mobile: Stacked */}
-      <div className="bg-white">
-        <div className="container mx-auto px-2 md:px-4">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8 xl:gap-12">
-            {/* Image Slider - Left on desktop */}
-            <div className="w-full lg:w-1/2">
-              <ImageSlider slides={slides} />
-            </div>
-
-            {/* Our Vision - Right on desktop */}
-            <div className="w-full lg:w-1/2">
-              <About />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <ImageSlider slides={slides} />
+      <About />
       <Mission />
       <Approach />
       <VideoSection />

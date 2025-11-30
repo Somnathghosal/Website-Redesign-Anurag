@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import StandardFooterSlider from "../components/StandardFooterSlider";
+import FooterImageSlider from "../components/FooterImageSlider";
 import Img1 from "../assests/img1.jpg";
 import Img2 from "../assests/img2.jpg";
 
@@ -388,7 +388,7 @@ const Conferences = () => {
     <div className="flex flex-col min-h-screen">
       {/* Sticky header (hero + title) */}
       <header className="sticky top-20 z-30">
-        <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+        <div className="relative h-20 md:h-28 lg:h-28 flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -396,7 +396,7 @@ const Conferences = () => {
                 'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741810294/ecbv0dyarhv3nb8gsu3g.jpg")',
             }}
           >
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-gray-200/40"></div>
           </div>
 
           <motion.div
@@ -415,14 +415,14 @@ const Conferences = () => {
           </motion.div>
         </div>
 
-        <div className="text-center py-3 bg-gray-800">
+        <div className="text-center py-3 bg-gray-100">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-0"
           >
-            <h1 className="text-2xl md:text-2xl font-bold text-white">
+            <h1 className="text-2xl md:text-2xl font-bold text-blue-600">
               List of Conferences, Seminars, and Workshops (Participated)
             </h1>
             <motion.div
@@ -475,11 +475,11 @@ const Conferences = () => {
 
       {/* Fixed bottom carousel */}
       <div className="fixed bottom-0 left-0 right-0 z-20">
-        <StandardFooterSlider
+        <FooterImageSlider
           slides={slides}
           slidesToShow={4}
           autoPlayInterval={3000}
-          heightClass="h-32 md:h-36 lg:h-40"
+          heightClass="h-36 md:h-44 lg:h-40"
           paddingYClass="py-6"
         />
       </div>

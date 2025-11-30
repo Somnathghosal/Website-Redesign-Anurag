@@ -60,7 +60,7 @@ const Publication = () => {
                 'url("https://res.cloudinary.com/dq1llsy7f/image/upload/v1741208808/lynf5kq3wvysp9y1fbup.jpg")',
             }}
           >
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-gray-200/40"></div>
           </div>
 
           <motion.div
