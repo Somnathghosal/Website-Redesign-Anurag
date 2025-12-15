@@ -215,6 +215,7 @@ const AboutPage = () => {
                 Sustainable Natural Resource Management: Science, Society,
                 and Policy
               </p>
+              <p className="text-gray-600 text-sm">(RD60202)</p>
             </div>
 
             <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
