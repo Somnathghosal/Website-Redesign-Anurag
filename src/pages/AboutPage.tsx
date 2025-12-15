@@ -5,9 +5,15 @@ const AboutPage = () => {
 
   // Function to navigate to blog post page
   const newsAndEvents = [
+   {
+      id: 18,
+      date: "11th December 2025",
+      event:
+        "Dr. Somnath Ghosal Attended International Symposium on “Climate Change, Disasters, and Adaptation” at Mizoram University, Aizawl as the 'Guest of Honour'.",
+    },
     {
       id: 17,
-      date: "April 2026",
+      date: "April 2025",
       event:
         "Dr. Somnath Ghosal received TUM Global Incentive Fund 2025, Germany for conducting project on 'Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management'.",
     },
