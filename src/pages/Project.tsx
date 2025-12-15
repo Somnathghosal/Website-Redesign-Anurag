@@ -149,11 +149,6 @@ const ProjectsComponent = () => {
       type: "Co-Principal Investigator",
       projects: [
         {
-          title: "Preparation of Sivagangai Regional Plan 2047",
-          period: "2024 – 2025",
-          role: "Co-Principal Investigator",
-        },
-        {
           title:
             "Review and Update of the Master Plan for the IIT Kharagpur Campus",
           period: "2024 - 2025",
@@ -244,6 +239,11 @@ const ProjectsComponent = () => {
     {
       type: "Co-Principal Investigator",
       projects: [
+       {
+          title: "Preparation of Sivagangai Regional Plan 2047",
+          period: "2024 – 2025",
+          role: "Co-Principal Investigator",
+        },
         {
           title:
             "Defining a Refugee Protection Law for India: Demystifying Socio-Legal Debates from 1950 to 2019 towards the New Beginning",
