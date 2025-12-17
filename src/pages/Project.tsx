@@ -149,8 +149,7 @@ const ProjectsComponent = () => {
       type: "Co-Principal Investigator",
       projects: [
         {
-          title:
-            "Review and Update of the Master Plan for the IIT Kharagpur Campus",
+          title:"Review and Update of the Master Plan for the IIT Kharagpur Campus",
           period: "2024 - 2025",
           role: "Co-Principal Investigator",
         },

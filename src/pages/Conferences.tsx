@@ -5,10 +5,10 @@ import Img2 from "../assests/img2.jpg";
 
 const conferences = [
   {
-    name: International Symposium on “Climate Change, Disasters, and Adaptation”,
+    name: "International Symposium on “Climate Change, Disasters, and Adaptation",
     location: "Mizoram University, Aizawl",
     date: "11th December 2025",
-    ‘Guest of Honour’,
+    role: "Guest of Honour",
   },
   {
     name: "16th International Conference on Environmental and Rural Development",
