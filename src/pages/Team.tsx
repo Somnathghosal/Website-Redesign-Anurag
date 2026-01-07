@@ -68,11 +68,7 @@ const Team = () => {
       title: "Research Scholars",
       icon: <GraduationCap className="mr-2 text-blue-600" />,
       scholars: [
-        {
-          name: "Sneha A P (2022 – 2026)",
-          topic:
-            "Assessing the Impact of an Emerging Seaport on Coastal Livelihoods",
-        },
+     
         {
           name: "Md Sayed Hasan (2021 – 2025)",
           topic:
