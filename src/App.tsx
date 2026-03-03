@@ -4,6 +4,8 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -38,29 +40,34 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <ToastContainer />
         <ScrollToTop />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/publication" element={<Publication />} />
-          <Route path="/publications/journal" element={<JournalPage />} />
-          <Route path="/publications/books" element={<Books />} />
-          <Route path="/publications/copyrights" element={<CopyrightPage />} />
-          <Route path="/publications/talks" element={<InvitedTalks />} />
-          <Route path="/publications/conferences" element={<Conferences />} />
-          <Route path="/publications/events" element={<Events />} />
+        <main className="flex-grow">
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/publication" element={<Publication />} />
+              <Route path="/publications/journal" element={<JournalPage />} />
+              <Route path="/publications/books" element={<Books />} />
+              <Route path="/publications/copyrights" element={<CopyrightPage />} />
+              <Route path="/publications/talks" element={<InvitedTalks />} />
+              <Route path="/publications/conferences" element={<Conferences />} />
+              <Route path="/publications/events" element={<Events />} />
 
-          <Route path="/research" element={<Research />} />
-          <Route path="/media" element={<News />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/blog/:id" element={<BlogPostPage />} />
-          <Route path="/research/projects" element={<Project />} />
-          <Route path="/research/team" element={<Team />} />
-          <Route path="/research/collaborations" element={<Collaboration />} />
-        </Routes>
+              <Route path="/research" element={<Research />} />
+              <Route path="/media" element={<News />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/blog/:id" element={<BlogPostPage />} />
+              <Route path="/research/projects" element={<Project />} />
+              <Route path="/research/team" element={<Team />} />
+              <Route path="/research/collaborations" element={<Collaboration />} />
+            </Routes>
+          </AnimatePresence>
+        </main>
+        <ScrollToTopButton />
       </div>
     </Router>
   );

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import FooterImageSlider from "../components/FooterImageSlider";
 
@@ -91,6 +92,16 @@ const invitedTalks = [
 ];
 
 const InvitedTalks = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const talksSlidesToShow = windowWidth < 640 ? 2 : windowWidth < 1024 ? 3 : 4;
+
   const slides = [
     {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099983/Invited%20talks/cbvpxmiv0tiopzyovhqa.jpg",
@@ -123,10 +134,16 @@ const InvitedTalks = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col min-h-screen"
+    >
       {/* Sticky top header (hero + subheader) */}
-      <header className="sticky top-20 z-30">
-        <div className="relative h-20 md:h-28 lg:h-28 flex items-center justify-center overflow-hidden">
+      <header className="sticky top-16 md:top-20 z-30">
+        <div className="relative h-20 md:h-28 flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -143,25 +160,25 @@ const InvitedTalks = () => {
             transition={{ duration: 0.8 }}
             className="relative text-center text-white px-4"
           >
-            <h1 className="text-3xl md:text-4xl font-bold mb-2 mt-5">Invited Talks</h1>
-            <div className="w-20 h-1 bg-blue-400 mx-auto mb-2"></div>
+            <h1 className="text-2xl md:text-4xl font-bold mb-2 mt-5">Invited Talks</h1>
+            <div className="w-16 md:w-20 h-1 bg-blue-400 mx-auto mb-2"></div>
           </motion.div>
         </div>
 
-        <div className="text-center text-2xl py-3 font-bold text-blue-600 bg-gray-200">
+        <div className="text-center text-lg md:text-2xl py-3 font-bold text-blue-600 bg-gray-200">
           <h2>Invited Talks and Presentations</h2>
         </div>
       </header>
 
       {/* Scrollable middle content */}
-  <main className="flex-1 mt-8 overflow-auto bg-gray-100 p-8 pb-56">
-        <ul className="max-w-4xl w-full mt-8 mx-auto">
+      <main className="flex-1 mt-4 md:mt-8 overflow-auto bg-gray-100 p-4 md:p-8 pb-48 md:pb-56">
+        <ul className="max-w-4xl w-full mx-auto space-y-4">
           {invitedTalks.map((talk, index) => (
-            <li key={index} className="mb-6 p-4 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold text-blue-800">{talk.title}</h2>
-              <p className="text-gray-700">{talk.event}</p>
-              <p className="text-gray-700">{talk.eventLocation}</p>
-              <p className="text-gray-600 text-sm">{talk.date}</p>
+            <li key={index} className="p-4 bg-white shadow-md rounded-lg">
+              <h2 className="text-lg md:text-xl font-semibold text-blue-800">{talk.title}</h2>
+              <p className="text-gray-700 text-sm md:text-base">{talk.event}</p>
+              {talk.eventLocation && <p className="text-gray-700 text-sm md:text-base">{talk.eventLocation}</p>}
+              <p className="text-gray-600 text-xs md:text-sm">{talk.date}</p>
             </li>
           ))}
         </ul>
@@ -171,13 +188,13 @@ const InvitedTalks = () => {
       <div className="fixed bottom-0 left-0 right-0 z-20">
         <FooterImageSlider
           slides={slides}
-          slidesToShow={4}
+          slidesToShow={talksSlidesToShow}
           autoPlayInterval={3000}
-          heightClass="h-36 md:h-44 lg:h-40"
-          paddingYClass="py-6"
+          heightClass="h-28 md:h-44 lg:h-40"
+          paddingYClass="py-4 md:py-6"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

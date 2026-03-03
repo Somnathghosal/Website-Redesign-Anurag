@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,19 +84,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-gray-100 py-4"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-gray-100 py-4"
+        }`}
     >
       <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 ">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 text-center">
+          <Link to="/" className="flex items-center gap-2">
             <img
               src="https://res.cloudinary.com/dq1llsy7f/image/upload/v1743854402/oymhfzlxj8k6glofetpn.jpg"
               alt="GEAR - Geo-Action Research"
-              className="h-20 max-h-full"
+              className="h-12 md:h-16 lg:h-20 max-h-full"
             />
-            <span className="text-2xl md:text-lg font-bold text-blue-700 flex items-center">
+            <span className="text-lg md:text-xl lg:text-2xl font-bold text-blue-700">
               Dr. Somnath Ghosal
             </span>
           </Link>
@@ -125,9 +125,8 @@ const Navbar = () => {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transition-transform ${
-                          isResearchDropdownOpen ? "rotate-180" : ""
-                        }`}
+                        className={`h-4 w-4 transition-transform ${isResearchDropdownOpen ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -202,76 +201,90 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white shadow-lg rounded-md py-2 animate-fadeIn">
-            {navItems.map((item) => (
-              <div key={item.name} className="relative">
-                {item.hasDropdown ? (
-                  <div className="flex items-center justify-between px-4 py-3">
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden mt-4 bg-white shadow-lg rounded-md py-2 overflow-hidden"
+            >
+              {navItems.map((item) => (
+                <div key={item.name} className="relative">
+                  {item.hasDropdown ? (
+                    <div className="flex items-center justify-between px-4 py-3">
+                      <Link
+                        to={item.path}
+                        className="text-blue-700 hover:text-blue-800 font-medium"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                      <button
+                        onClick={toggleMobileResearchDropdown}
+                        className="text-blue-700 hover:bg-blue-50 p-1 rounded-full focus:outline-none"
+                        aria-expanded={isMobileResearchDropdownOpen}
+                        aria-label="Toggle research dropdown"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`h-4 w-4 transition-transform ${isMobileResearchDropdownOpen ? "rotate-180" : ""
+                            }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  ) : (
                     <Link
                       to={item.path}
-                      className="text-blue-700 hover:text-blue-800 font-medium"
+                      className="block px-4 py-3 text-blue-700 hover:bg-blue-50 font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
-                    <button
-                      onClick={toggleMobileResearchDropdown}
-                      className="text-blue-700 hover:bg-blue-50 p-1 rounded-full focus:outline-none"
-                      aria-expanded={isMobileResearchDropdownOpen}
-                      aria-label="Toggle research dropdown"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transition-transform ${
-                          isMobileResearchDropdownOpen ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="block px-4 py-3 text-blue-700 hover:bg-blue-50 font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-
-                {/* Mobile Dropdown Items */}
-                {item.hasDropdown &&
-                  isMobileResearchDropdownOpen &&
-                  item.subItems && (
-                    <div className="bg-blue-50">
-                      {item.subItems.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          to={subItem.path}
-                          className="block px-8 py-3 text-blue-700 hover:bg-blue-100 font-medium"
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                          }}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
                   )}
-              </div>
-            ))}
-          </div>
-        )}
+
+                  {/* Mobile Dropdown Items */}
+                  <AnimatePresence>
+                    {item.hasDropdown &&
+                      isMobileResearchDropdownOpen &&
+                      item.subItems && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="bg-blue-50 overflow-hidden"
+                        >
+                          {item.subItems.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              to={subItem.path}
+                              className="block px-8 py-3 text-blue-700 hover:bg-blue-100 font-medium"
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                              }}
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

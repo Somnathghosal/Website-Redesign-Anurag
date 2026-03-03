@@ -1,11 +1,12 @@
 import { BookMarked, Calendar, FileText } from "lucide-react";
+import { motion } from "framer-motion";
 
 const AboutPage = () => {
   // Blog posts data array for cleaner rendering
 
   // Function to navigate to blog post page
   const newsAndEvents = [
-   {
+    {
       id: 18,
       date: "11th December 2025 ",
       event:
@@ -118,7 +119,13 @@ const AboutPage = () => {
   // Reusable blog card component with TypeScript typing
 
   return (
-    <div className="pt-20 pb-16 bg-white">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="pt-20 pb-16 bg-white"
+    >
       <div className="container mx-auto px-4 md:px-6 ">
         {/* Header Section */}
         <div className="max-w-4xl mx-auto mb-16 text-center ">
@@ -140,7 +147,13 @@ const AboutPage = () => {
                 />
               </div>
             </div>
-            <div className="md:w-[65%]">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="md:w-[65%]"
+            >
               <div className="flex items-center mb-4"></div>
               <div className="max-h-[410px] overflow-y-auto pr-4 text-justify">
                 <p className="text-gray-700 text-lg leading-relaxed">
@@ -174,7 +187,7 @@ const AboutPage = () => {
                   Government of India.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -327,7 +340,7 @@ const AboutPage = () => {
 
         {/* Blog Section */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

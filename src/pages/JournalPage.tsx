@@ -331,7 +331,7 @@ const JournalPage = () => {
     {
       title: "Regional Planning",
       papers: [
-         {
+        {
           authors: "Kumar, H., Ghosh, M. and Ghosal, S.",
           year: 2025,
           title:
@@ -431,7 +431,13 @@ const JournalPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-gray-50"
+    >
       {/* Hero Header */}
       <div className="relative h-[40vh]  flex items-center justify-center overflow-hidden">
         <div
@@ -458,7 +464,7 @@ const JournalPage = () => {
       <div className="container mx-auto px-4 md:px-6 py-16">
         {categories.map((category, index) => (
           <AnimatedSection key={index} className="mb-12" delay={index * 0.2}>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-6">
+            <h2 className="text-xl md:text-2xl font-semibold text-blue-800 mb-6">
               {category.title}
             </h2>
             <div className="space-y-6">
@@ -471,7 +477,7 @@ const JournalPage = () => {
                   transition={{ duration: 0.5, delay: paperIndex * 0.1 }}
                   className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
-                  <p className="text-lg text-gray-800 mb-2">
+                  <p className="text-base md:text-lg text-gray-800 mb-2">
                     {paper.authors} ({paper.year}). {paper.title}.{" "}
                     <span className="italic">{paper.journal}</span>{" "}
                     {paper.details}.
@@ -496,7 +502,7 @@ const JournalPage = () => {
         ))}
 
         <AnimatedSection className="mt-16" delay={0.4}>
-          <h2 className="text-2xl font-semibold text-blue-800 mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 mb-6">
             Referee for Journals
           </h2>
           <motion.div
@@ -517,14 +523,14 @@ const JournalPage = () => {
                   className="flex items-center"
                 >
                   <span className="text-blue-600 mr-2">•</span>
-                  <span className="text-gray-700">{journal}</span>
+                  <span className="text-gray-700 text-sm md:text-base">{journal}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </AnimatedSection>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

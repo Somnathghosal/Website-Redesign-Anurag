@@ -75,8 +75,13 @@ const events = [
 
 const Events = () => {
   return (
-    <>
-      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="relative h-[30vh] md:h-[40vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -93,14 +98,14 @@ const Events = () => {
           transition={{ duration: 0.8 }}
           className="relative text-center text-white px-4"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl md:text-6xl font-bold mb-4">
             Events Organised
           </h1>
-          <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
+          <div className="w-16 md:w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
         </motion.div>
       </div>
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center md:text-left">
           Events Organised
         </h2>
         <div className="space-y-4">
@@ -112,16 +117,16 @@ const Events = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white shadow-lg rounded-lg p-6 border border-gray-200"
             >
-              <h3 className="text-lg font-semibold text-blue-700">
+              <h3 className="text-base md:text-lg font-semibold text-blue-700">
                 {event.title}
               </h3>
-              <p className="text-gray-600">{event.location}</p>
-              <p className="text-gray-500 text-sm">{event.date}</p>
+              <p className="text-sm md:text-base text-gray-600">{event.location}</p>
+              <p className="text-xs md:text-sm text-gray-500">{event.date}</p>
             </motion.div>
           ))}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

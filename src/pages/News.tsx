@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useState } from "react";
 import MediaImage from "../assests/Media.jpg";
@@ -89,7 +89,12 @@ const News = () => {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Header Section */}
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div
@@ -120,7 +125,8 @@ const News = () => {
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -143,7 +149,7 @@ const News = () => {
                 <img
                   src={article.img}
                   alt={article.alt}
-                  className="w-full h-[300px] object-cover md:h-[350px] lg:h-[400px] transition-transform transform hover:scale-105"
+                  className="w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover transition-transform transform hover:scale-105"
                 />
               </div>
             </motion.div>
@@ -152,38 +158,40 @@ const News = () => {
       </div>
 
       {/* Image Modal */}
-      {selectedImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-80 pt-16"
-          onClick={closeImageModal}
-        >
-          <div className="flex flex-col items-center justify-center min-h-screen px-4 py-16">
-            <div
-              className="relative max-w-6xl mx-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={closeImageModal}
-                className="absolute top-4 right-4 bg-white rounded-full p-2 text-gray-800 hover:bg-gray-200 shadow-lg z-10"
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-80 pt-16 flex items-center justify-center"
+            onClick={closeImageModal}
+          >
+            <div className="flex flex-col items-center justify-center min-h-screen px-4 py-16">
+              <div
+                className="relative max-w-6xl mx-auto"
+                onClick={(e) => e.stopPropagation()}
               >
-                <X size={24} />
-              </button>
-              <motion.img
-                src={selectedImage.img}
-                alt={selectedImage.alt}
-                className="max-w-full max-h-[100vh] object-contain rounded-lg"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              />
+                <button
+                  onClick={closeImageModal}
+                  className="absolute top-4 right-4 bg-white rounded-full p-2 text-gray-800 hover:bg-gray-200 shadow-lg z-10"
+                >
+                  <X size={24} />
+                </button>
+                <motion.img
+                  src={selectedImage.img}
+                  alt={selectedImage.alt}
+                  className="max-w-full max-h-[100vh] object-contain rounded-lg"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
             </div>
-          </div>
-        </motion.div>
-      )}
-    </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 

@@ -4,10 +4,10 @@ const About = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col">
           <div className="w-full text-justify">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-6">
               Our Vision
             </h2>
-            <p className="text-gray-700 text-xl leading-relaxed mb-6">
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
               It is rooted in a profound commitment to transformative social
               change, focusing on empowering marginalized communities through a
               holistic approach to development. We are dedicated to

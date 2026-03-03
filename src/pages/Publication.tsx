@@ -49,7 +49,13 @@ const publicationCategories = [
 
 const Publication = () => {
   return (
-    <div className="bg-gray-50">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="bg-gray-50"
+    >
       <div className="w-full mx-auto">
         {/* Hero Section */}
         <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
@@ -124,7 +130,7 @@ const Publication = () => {
 
         {/* Add the Image Slider as a footer */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -76,7 +76,12 @@ const bookReviews = [
 
 const Books = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -99,19 +104,19 @@ const Books = () => {
         </motion.div>
       </div>
 
-      <div className="p-8 max-w-4xl mx-auto">
-        <h1 className="text-4xl text-blue-600 font-bold py-2">
+      <div className="p-6 md:p-8 max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-4xl text-blue-600 font-bold py-2">
           <span className="pr-4">📚</span>Books
         </h1>
-        <p className="text-lg font-medium mb-4">
+        <p className="text-base md:text-lg font-medium mb-4">
           <span className="font-bold">Ghosal, S. (2013).</span>{" "}
           <i>Sustainable Forestry: People, Culture and Economics</i> (ISBN:
           978-81-910382-9-3), L. G. Publishers Distributors, New Delhi.
         </p>
-        <h2 className="text-2xl font-bold text-blue-700 mt-6 mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-blue-700 mt-6 mb-4">
           Book Chapter/Congress/Conference Proceedings (Refereed/Peer-Reviewed):
         </h2>
-        <ul className="list-disc pl-6 space-y-2 text-lg">
+        <ul className="list-disc pl-6 space-y-2 text-base md:text-lg">
           {bookChapters.map((chapter, index) => (
             <li key={index}>
               <span className="">{chapter.author}</span> {chapter.title}{" "}
@@ -119,10 +124,10 @@ const Books = () => {
             </li>
           ))}
         </ul>
-        <h2 className="text-2xl font-bold text-blue-700 mt-6 mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-blue-700 mt-6 mb-4">
           Book Review:
         </h2>
-        <ul className="list-disc pl-6 space-y-2 text-lg">
+        <ul className="list-disc pl-6 space-y-2 text-base md:text-lg">
           {bookReviews.map((review, index) => (
             <li key={index}>
               <span className="">{review.title}</span> by {review.author} in{" "}
@@ -131,7 +136,7 @@ const Books = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

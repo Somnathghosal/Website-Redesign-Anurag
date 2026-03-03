@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import FooterImageSlider from "../components/FooterImageSlider";
 import PP1 from "../assests/PP1.jpg";
 import PP2 from "../assests/PP2.jpg";
@@ -8,6 +9,16 @@ import PP5 from "../assests/PP5.jpg";
 
 const ProjectsComponent = () => {
   const [activeTab, setActiveTab] = useState("current");
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const projectsSlidesToShow = windowWidth < 640 ? 2 : windowWidth < 1024 ? 3 : 4;
+
   const slides = [
     {
       id: "1",
@@ -130,7 +141,7 @@ const ProjectsComponent = () => {
     {
       type: "Principal Investigator",
       projects: [
-       {
+        {
           title:
             "Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management",
           period: "2025 – 2026",
@@ -149,7 +160,7 @@ const ProjectsComponent = () => {
       type: "Co-Principal Investigator",
       projects: [
         {
-          title:"Review and Update of the Master Plan for the IIT Kharagpur Campus",
+          title: "Review and Update of the Master Plan for the IIT Kharagpur Campus",
           period: "2024 - 2025",
           role: "Co-Principal Investigator",
         },
@@ -238,7 +249,7 @@ const ProjectsComponent = () => {
     {
       type: "Co-Principal Investigator",
       projects: [
-       {
+        {
           title: "Preparation of Sivagangai Regional Plan 2047",
           period: "2024 – 2025",
           role: "Co-Principal Investigator",
@@ -274,19 +285,24 @@ const ProjectsComponent = () => {
   ];
 
   return (
-    <div>
-      <div className="container mx-auto  px-4 py-8">
-        <div className="bg-blue-50 mt-20  rounded-lg shadow-md overflow-hidden">
-          <div className=" px-6 py-4">
-            <h2 className="text-2xl font-bold text-center text-blue-800">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-blue-50 mt-16 md:mt-20 rounded-lg shadow-md overflow-hidden">
+          <div className="px-6 py-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-800">
               Research Projects
             </h2>
           </div>
 
-          <div className="flex border-b ">
+          <div className="flex border-b">
             <button
               onClick={() => setActiveTab("current")}
-              className={`w-1/2 py-3 text-center rounded-md font-semibold transition-colors duration-300 
+              className={`w-1/2 py-3 text-center text-sm md:text-base font-semibold transition-colors duration-300 
               ${activeTab === "current"
                   ? "bg-blue-600 text-white"
                   : "text-blue-700 hover:bg-blue-200"
@@ -296,7 +312,7 @@ const ProjectsComponent = () => {
             </button>
             <button
               onClick={() => setActiveTab("completed")}
-              className={`w-1/2 py-3 text-center rounded-md font-semibold transition-colors duration-300 
+              className={`w-1/2 py-3 text-center text-sm md:text-base font-semibold transition-colors duration-300 
               ${activeTab === "completed"
                   ? "bg-blue-600 text-white"
                   : "text-blue-700 hover:bg-blue-200"
@@ -306,28 +322,28 @@ const ProjectsComponent = () => {
             </button>
           </div>
 
-          <div className="p-4 h-full overflow-y-auto">
+          <div className="p-4 h-full">
             {activeTab === "current"
               ? currentProjects.map((projectGroup, groupIndex) => (
                 <div key={groupIndex} className="mb-6">
-                  <h3 className="text-lg font-semibold mb-3 text-blue-800">
+                  <h3 className="text-base md:text-lg font-semibold mb-3 text-blue-800">
                     {projectGroup.type}
                   </h3>
-                  <div className="h-64 overflow-y-auto pr-2">
+                  <div className="max-h-96 md:h-64 overflow-y-auto pr-2">
                     {projectGroup.projects.map((project, index) => (
                       <div
                         key={index}
-                        className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3 
-                hover:bg-blue-100 hover:shadow-md transition-all duration-300"
+                        className="bg-white border border-blue-200 rounded-lg p-4 mb-3 
+                hover:border-blue-400 hover:shadow-md transition-all duration-300"
                       >
-                        <h4 className="text-md font-medium mb-2 text-blue-900">
+                        <h4 className="text-sm md:text-base font-medium mb-2 text-blue-900 leading-snug">
                           {project.title}
                         </h4>
-                        <div className="flex items-center space-x-3">
-                          <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">
+                        <div className="flex flex-wrap items-center gap-2 md:gap-3">
+                          <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-[10px] md:text-xs">
                             {project.role}
                           </span>
-                          <span className="text-sm text-blue-600">
+                          <span className="text-[10px] md:text-sm text-blue-600">
                             {project.period}
                           </span>
                         </div>
@@ -338,24 +354,24 @@ const ProjectsComponent = () => {
               ))
               : completedProjects.map((projectGroup, groupIndex) => (
                 <div key={groupIndex} className="mb-6">
-                  <h3 className="text-lg font-semibold mb-3 text-blue-800">
+                  <h3 className="text-base md:text-lg font-semibold mb-3 text-blue-800">
                     {projectGroup.type}
                   </h3>
-                  <div className="h-64 overflow-y-auto pr-2">
+                  <div className="max-h-96 md:h-64 overflow-y-auto pr-2">
                     {projectGroup.projects.map((project, index) => (
                       <div
                         key={index}
-                        className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3 
-                hover:bg-blue-100 hover:shadow-md transition-all duration-300"
+                        className="bg-white border border-blue-200 rounded-lg p-4 mb-3 
+                hover:border-blue-400 hover:shadow-md transition-all duration-300"
                       >
-                        <h4 className="text-md font-medium mb-2 text-blue-900">
+                        <h4 className="text-sm md:text-base font-medium mb-2 text-blue-900 leading-snug">
                           {project.title}
                         </h4>
-                        <div className="flex items-center space-x-3">
-                          <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">
+                        <div className="flex flex-wrap items-center gap-2 md:gap-3">
+                          <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-[10px] md:text-xs">
                             {project.role}
                           </span>
-                          <span className="text-sm text-blue-600">
+                          <span className="text-[10px] md:text-sm text-blue-600">
                             {project.period}
                           </span>
                         </div>
@@ -369,10 +385,10 @@ const ProjectsComponent = () => {
       </div>
       <FooterImageSlider
         slides={slides}
-        slidesToShow={4} // Number of logos to show at once
-        autoPlayInterval={3000} // Change logo every 3 seconds
+        slidesToShow={projectsSlidesToShow}
+        autoPlayInterval={3000}
       />
-    </div>
+    </motion.div>
   );
 };
 

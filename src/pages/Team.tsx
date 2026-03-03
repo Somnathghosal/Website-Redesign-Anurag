@@ -68,7 +68,7 @@ const Team = () => {
       title: "Research Scholars",
       icon: <GraduationCap className="mr-2 text-blue-600" />,
       scholars: [
-     
+
         {
           name: "Md Sayed Hasan (2021 – 2025)",
           topic:
@@ -210,13 +210,19 @@ const Team = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8"
+    >
       <div className="max-w-7xl mx-auto mt-20">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-800 mb-12"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-center text-gray-800 mb-12"
         >
           Our Research Community
         </motion.h1>
@@ -267,7 +273,7 @@ const Team = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

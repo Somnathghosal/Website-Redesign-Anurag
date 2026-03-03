@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Define the structure for collaborator logos
@@ -184,18 +185,22 @@ const Collaboration: React.FC = () => {
   );
 
   return (
-    <div
-      className="container mx-auto px-4 py-12 bg-blue-50/50 
-                 pt-24 md:pt-32 lg:pt-40 
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="container mx-auto px-4 py-8 md:py-12 bg-blue-50/50 
+                 pt-20 md:pt-32 lg:pt-40 
                  scroll-mt-20 md:scroll-mt-24 lg:scroll-mt-32"
     >
-      <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-blue-900">
         Our Collaborators
       </h2>
 
       {/* Academic Collaborators Section */}
       <div className="mb-12">
-        <h3 className="text-2xl font-semibold text-center mb-8 text-blue-800">
+        <h3 className="text-xl md:text-2xl font-semibold text-center mb-8 text-blue-800">
           Academic Partners
         </h3>
         {renderLogos(academicCollaborators, academicScrollRef)}
@@ -203,12 +208,12 @@ const Collaboration: React.FC = () => {
 
       {/* Industry Collaborators Section */}
       <div>
-        <h3 className="text-2xl font-semibold text-center mb-8 text-blue-800">
+        <h3 className="text-xl md:text-2xl font-semibold text-center mb-8 text-blue-800">
           Industry Partners
         </h3>
         {renderLogos(industryCollaborators, industryScrollRef)}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

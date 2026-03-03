@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import FooterImageSlider from "../components/FooterImageSlider";
 import Img1 from "../assests/img1.jpg";
@@ -328,6 +329,16 @@ const conferences = [
 ];
 
 const Conferences = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const confSlidesToShow = windowWidth < 640 ? 2 : windowWidth < 1024 ? 3 : 4;
+
   const slides = [
     {
       url: "https://res.cloudinary.com/dq1llsy7f/image/upload/v1743099680/Conferences/txvabsese2gquhgsrcuz.jpg",
@@ -391,10 +402,16 @@ const Conferences = () => {
     },
   ];
   return (
-    <div className="flex flex-col min-h-screen">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col min-h-screen"
+    >
       {/* Sticky header (hero + title) */}
-      <header className="sticky top-20 z-30">
-        <div className="relative h-20 md:h-28 lg:h-28 flex items-center justify-center overflow-hidden">
+      <header className="sticky top-16 md:top-20 z-30">
+        <div className="relative h-20 md:h-28 flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
@@ -411,12 +428,12 @@ const Conferences = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="relative text-center text-white px-4"
           >
-            <h1 className="text-3xl md:text-4xl font-bold mb-0 mt-5">Conferences</h1>
+            <h1 className="text-2xl md:text-4xl font-bold mb-0 mt-5">Conferences</h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-20 h-1 bg-blue-400 mx-auto mb-2"
+              className="w-16 md:w-20 h-1 bg-blue-400 mx-auto mb-2"
             ></motion.div>
           </motion.div>
         </div>
@@ -426,23 +443,23 @@ const Conferences = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center mb-0"
+            className="text-center mb-0 px-4"
           >
-            <h1 className="text-2xl md:text-2xl font-bold text-blue-600">
+            <h1 className="text-lg md:text-2xl font-bold text-blue-600">
               List of Conferences, Seminars, and Workshops (Participated)
             </h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-24 h-1 bg-blue-400 mx-auto mt-2"
+              className="w-20 md:w-24 h-1 bg-blue-400 mx-auto mt-2"
             ></motion.div>
           </motion.div>
         </div>
       </header>
 
       {/* Scrollable content area */}
-      <main className="flex-1 mt-8 overflow-auto bg-gray-100 p-6 pb-56">
+      <main className="flex-1 mt-4 md:mt-8 overflow-auto bg-gray-100 p-4 md:p-6 pb-48 md:pb-56">
         <ul className="max-w-4xl mx-auto space-y-6">
           {conferences.map((conference, index) => (
             <motion.li
@@ -455,22 +472,22 @@ const Conferences = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className="p-6 bg-white shadow-lg rounded-lg border-l-4 border-blue-500"
+              className="p-4 md:p-6 bg-white shadow-lg rounded-lg border-l-4 border-blue-500"
             >
-              <h2 className="text-xl font-semibold text-blue-700">
+              <h2 className="text-lg md:text-xl font-semibold text-blue-700">
                 {conference.name}
               </h2>
-              <p className="text-gray-600 ">
+              <p className="text-sm md:text-base text-gray-600 ">
                 {conference.location} ({conference.date})
               </p>
               {conference.presentationTitle && (
-                <p className="mt-2 text-gray-700">
+                <p className="mt-2 text-sm md:text-base text-gray-700">
                   <strong>Title of the Presentation:</strong>{" "}
                   <span className="italic">{conference.presentationTitle}</span>
                 </p>
               )}
               {conference.role && (
-                <p className="mt-1 text-gray-600">
+                <p className="mt-1 text-xs md:text-sm text-gray-600">
                   <strong>Role:</strong> {conference.role}
                 </p>
               )}
@@ -483,13 +500,13 @@ const Conferences = () => {
       <div className="fixed bottom-0 left-0 right-0 z-20">
         <FooterImageSlider
           slides={slides}
-          slidesToShow={4}
+          slidesToShow={confSlidesToShow}
           autoPlayInterval={3000}
-          heightClass="h-36 md:h-44 lg:h-40"
-          paddingYClass="py-6"
+          heightClass="h-28 md:h-44 lg:h-40"
+          paddingYClass="py-4 md:py-6"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

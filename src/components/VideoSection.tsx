@@ -1,10 +1,9 @@
-import React from "react";
 
 const VideoSection = () => {
   return (
     <div className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-8 text-center">
           More About Our Participatory Action Research Projects
         </h2>
 
@@ -23,7 +22,7 @@ const VideoSection = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <p className="text-gray-700 text-xl mb-6 text-center">
+          <p className="text-gray-700 text-lg md:text-xl mb-6 text-center">
             Our participatory action research focuses on the intersection of
             rural geography, development, and sustainability. Watch this video
             to explore how we integrate technology and community engagement to
@@ -31,10 +30,10 @@ const VideoSection = () => {
           </p>
 
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-blue-800 mb-4">
+            <h3 className="text-lg md:text-xl font-semibold text-blue-800 mb-4">
               Key Takeaways:
             </h3>
-            <ul className="space-y-2 text-xl">
+            <ul className="space-y-2 text-lg md:text-xl">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
                 <span className="text-gray-700">

@@ -38,7 +38,7 @@ const researchData: ResearchItem[] = [
       "Public policy emphasizes inclusive healthcare and education for rural communities.",
     details:
       "Public policy emphasizes inclusive healthcare and education for rural communities. Decentralized healthcare models improve accessibility and affordability, ensuring better health outcomes. Technology and community participation play a crucial role in enhancing rural education opportunities. Addressing gaps in policy implementation leads to evidence-based solutions for sustainable development. Action research focuses on innovative frameworks that integrate education, health, and livelihood strategies.",
-  videoUrl: "https://www.youtube.com/embed/q3VDMkTZf1Y?si=tdwjo1hfB7yJKI8n",
+    videoUrl: "https://www.youtube.com/embed/q3VDMkTZf1Y?si=tdwjo1hfB7yJKI8n",
   },
   {
     title: "Social Forestry and Nature-Based Entrepreneurship",
@@ -70,7 +70,13 @@ const Research = () => {
   };
 
   return (
-    <div className="flex flex-col bg-gray-100 min-h-screen">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col bg-gray-100 min-h-screen"
+    >
       {/* Research List Section */}
       <div className="flex flex-col lg:flex-row bg-gray-100 mt-20 min-h-screen">
         {/* Image Section - Made responsive for mobile */}
@@ -155,9 +161,8 @@ const Research = () => {
               onClick={() => setSelectedResearch(null)}
             >
               <motion.div
-                className={`bg-white rounded-lg shadow-xl w-full relative ${
-                  selectedResearch.videoUrl ? "max-w-4xl" : "max-w-2xl"
-                } max-h-[90vh] overflow-hidden`}
+                className={`bg-white rounded-lg shadow-xl w-full relative ${selectedResearch.videoUrl ? "max-w-4xl" : "max-w-2xl"
+                  } max-h-[90vh] overflow-hidden`}
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -50, opacity: 0 }}
@@ -220,7 +225,7 @@ const Research = () => {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

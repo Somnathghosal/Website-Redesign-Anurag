@@ -5,7 +5,7 @@ type CopyrightItem = {
   title: string;
   type: "Patent" | "Copyright";
   year: string;
-  status?: "Filed" | "Submitted" | "Certified";
+  status?: "Filed" | "Submitted" | "Certified" | "Granted";
 };
 
 const CopyrightPage = () => {
@@ -46,7 +46,13 @@ const CopyrightPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-gray-50"
+    >
       {/* Hero Header */}
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div
@@ -65,7 +71,7 @@ const CopyrightPage = () => {
           transition={{ duration: 0.8 }}
           className="relative text-center text-white px-4"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl md:text-6xl font-bold mb-4">
             Patents & Copyrights
           </h1>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
@@ -74,7 +80,7 @@ const CopyrightPage = () => {
 
       <div className="container mx-auto px-4 md:px-6 py-16">
         <AnimatedSection className="mb-12">
-          <h2 className="text-2xl font-semibold text-blue-800 mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 mb-6">
             Intellectual Property
           </h2>
           <div className="space-y-6">
@@ -87,9 +93,9 @@ const CopyrightPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="flex items-start justify-between">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="flex-1">
-                    <p className="text-lg text-gray-800 mb-2">
+                    <p className="text-base md:text-lg text-gray-800 mb-2">
                       <span className="font-semibold">{item.title}</span>
                     </p>
                     <div className="text-sm text-gray-600 space-y-1">
@@ -98,14 +104,13 @@ const CopyrightPage = () => {
                       {item.status && <p>Status: {item.status}</p>}
                     </div>
                   </div>
-                  <div className="ml-4">
+                  <div className="shrink-0">
                     <span
                       className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-                      ${
-                        item.type === "Patent"
+                      ${item.type === "Patent"
                           ? "bg-green-100 text-green-800"
                           : "bg-blue-100 text-blue-800"
-                      }`}
+                        }`}
                     >
                       {item.type}
                     </span>
@@ -116,7 +121,7 @@ const CopyrightPage = () => {
           </div>
         </AnimatedSection>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
