@@ -157,6 +157,21 @@ const JournalPage = () => {
       papers: [
         {
           authors: "Hasan, M. S. and Ghosal, S.",
+          year: 2026,
+          title: "Types of Social Networks of Urban Older Indians: A Cross-Sectional Study",
+          journal: "Discover Public Health",
+          doi: "",
+        },
+        {
+          authors: "Hasan, M. S. and Ghosal, S.",
+          year: 2026,
+          title: "Navigating Urban Ageing: Exploring the Impact of Social Networks on Subjective Well-being among Older Indians",
+          journal: "Clinical Epidemiology and Global Health",
+          details: "Vol. 38",
+          doi: "10.1016/j.cegh.2026.102315",
+        },
+        {
+          authors: "Hasan, M. S. and Ghosal, S.",
           year: 2025,
           title:
             "Unravelling Inequities in Access to Public Healthcare Services in West Bengal, India: Multiple Dimensions, Geographic Pattern, and Association with Health Outcomes",
@@ -192,8 +207,15 @@ const JournalPage = () => {
       ],
     },
     {
-      title: "Social Forestry and Biodiversity Conservation",
+      title: "Social Forestry, and Biodiversity Conservation",
       papers: [
+        {
+          authors: "Ghosal, S., Ghosh, M. and Kumar, H.",
+          year: 2026,
+          title: "Human Interactions with Greeneries in an Indian Urban Environment: Exploring Determinants of Motivations and Constraints of City Dwellers' Interaction Towards Green Spaces",
+          journal: "Asia-Pacific Journal of Regional Science",
+          doi: "",
+        },
         {
           authors: "Ghosal, S. and Goswami, T.",
           year: 2024,
@@ -329,8 +351,15 @@ const JournalPage = () => {
       ],
     },
     {
-      title: "Regional Planning",
+      title: "Regional Planning and Development",
       papers: [
+        {
+          authors: "Kumar, H., and Ghosal, S.",
+          year: 2026,
+          title: "Assessing the Dynamics and Characteristics of Urban Sprawl in the Patna Planning Area, Bihar, India: A Spatial Metrics Analysis",
+          journal: "Journal of Earth System Science",
+          doi: "",
+        },
         {
           authors: "Kumar, H., Ghosh, M. and Ghosal, S.",
           year: 2025,

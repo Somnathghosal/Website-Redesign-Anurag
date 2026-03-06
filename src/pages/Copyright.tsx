@@ -14,22 +14,22 @@ const CopyrightPage = () => {
       title:
         "Sustainable Eco-Silt: Innovative Green Organic Fertiliser from Curated Pond Silt and its Production Process",
       type: "Copyright",
-      year: "2024",
-      status: "Submitted",
+      year: "2026",
+      status: "Certified",
     },
     {
       title:
         "A Model to Provide Healthy and Hygienic Restroom Facility for Schools at Reasonable Cost: Issues and Evidences",
       type: "Copyright",
-      year: "2024",
-      status: "Submitted",
+      year: "2026",
+      status: "Certified",
     },
     {
       title:
         "Organic Fertilizer Produced from the Silt of Specialized Curated Ponds and the Process Thereof",
       type: "Patent",
-      year: "2024",
-      status: "Filed",
+      year: "2026",
+      status: "Granted",
     },
     {
       title: "Low-Cost Drinking Water Filtration System",

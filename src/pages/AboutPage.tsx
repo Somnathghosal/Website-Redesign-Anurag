@@ -1,11 +1,24 @@
 import { BookMarked, Calendar, FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import { FooterVideo } from "../components/FooterImageSlider";
 
 const AboutPage = () => {
   // Blog posts data array for cleaner rendering
 
   // Function to navigate to blog post page
   const newsAndEvents = [
+    {
+      id: 20,
+      date: "1st January 2026 – 31st December 2028",
+      event:
+        "Prof. Ghosal has become the RuTAG  - Coordinator of IIT Kharagpur.",
+    },
+    {
+      id: 19,
+      date: "2025 - present",
+      event:
+        "Prof. Ghosal has become the Core Committee Member – SPARC (Schemes for Promotion of Academic and Research Collaboration), Ministry of Education, Government of India.",
+    },
     {
       id: 18,
       date: "11th December 2025 ",
@@ -340,6 +353,7 @@ const AboutPage = () => {
 
         {/* Blog Section */}
       </div>
+      <FooterVideo />
     </motion.div>
   );
 };

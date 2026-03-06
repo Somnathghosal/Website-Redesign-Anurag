@@ -70,9 +70,27 @@ const Team = () => {
       scholars: [
 
         {
-          name: "Md Sayed Hasan (2021 – 2025)",
+          name: "Vijeta Kachhap (2026 – 2029)",
+          topic: "Artificial Intelligence, Public Policy, and Law",
+        },
+        {
+          name: "Saikat Paul (2026 – 2029)",
+          topic: "Impact of Climate Change on Rural Livelihoods",
+        },
+        {
+          name: "Hemant Kumar (2018 – 2026)",
+          topic:
+            "Rural Transformation through Peri-Urbanization and Its Impact on the Existing Local Governing Institution in Bihar, India",
+        },
+        {
+          name: "Md Sayed Hasan (2021 – 2026)",
           topic:
             "Social Relationships and Elderly Well-being: A Psychosocial Study",
+        },
+        {
+          name: "Dipti Paridhi Kindo (2017 – 2025)",
+          topic:
+            "Local Self-Governance: The Experiment of Panchayats (Extension to Scheduled Areas) Act in Jharkhand",
         },
         {
           name: "Chhanda Ruj (2020 – 2025)",
@@ -83,16 +101,6 @@ const Team = () => {
           name: "Aloke Majumdar (2020 – 2025)",
           topic:
             "Understanding the Implementation of Climate Action Plans Through Risk-Informed Governance: A Case Study of the Indian Sundarbans Delta",
-        },
-        {
-          name: "Hemant Kumar (2018 – 2025)",
-          topic:
-            "Rural Transformation through Peri-Urbanization and Its Impact on the Existing Local Governing Institution in Bihar, India",
-        },
-        {
-          name: "Dipti Paridhi Kindo (2017 – 2025)",
-          topic:
-            "Local Self-Governance: The Experiment of Panchayats (Extension to Scheduled Areas) Act in Jharkhand",
         },
         {
           name: "Poulomi Chakraborty (2020 – 2024)",

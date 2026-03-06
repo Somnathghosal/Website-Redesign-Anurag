@@ -171,7 +171,7 @@ const InvitedTalks = () => {
       </header>
 
       {/* Scrollable middle content */}
-      <main className="flex-1 mt-4 md:mt-8 overflow-auto bg-gray-100 p-4 md:p-8 pb-48 md:pb-56">
+      <main className="flex-1 mt-4 md:mt-8 bg-gray-100 p-4 md:p-8 pb-10">
         <ul className="max-w-4xl w-full mx-auto space-y-4">
           {invitedTalks.map((talk, index) => (
             <li key={index} className="p-4 bg-white shadow-md rounded-lg">
@@ -184,8 +184,8 @@ const InvitedTalks = () => {
         </ul>
       </main>
 
-      {/* Fixed bottom carousel */}
-      <div className="fixed bottom-0 left-0 right-0 z-20">
+      {/* Bottom sections (Carousel) */}
+      <div className="bg-gray-100">
         <FooterImageSlider
           slides={slides}
           slidesToShow={talksSlidesToShow}

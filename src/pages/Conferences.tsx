@@ -6,6 +6,19 @@ import Img2 from "../assests/img2.jpg";
 
 const conferences = [
   {
+    name: "International Cancer Research Conclave – ll",
+    location: "GITAM School of Science, Visakhapatnam",
+    date: "16th February 2026",
+    role: "Guest of Honour",
+  },
+  {
+    name: "Impact Rise Conclave ‘Forging Futures’",
+    location: "IIT Kharagpur Research Park, Kolkata",
+    date: "17th – 18th January 2026",
+    presentationTitle: "Sustainable Rural Development: Water, Sanitation, Affordable Housing, and Sustainable Agriculture",
+    role: "Chairing Thematic Session",
+  },
+  {
     name: "International Symposium on “Climate Change, Disasters, and Adaptation",
     location: "Mizoram University, Aizawl",
     date: "11th December 2025",
@@ -459,7 +472,7 @@ const Conferences = () => {
       </header>
 
       {/* Scrollable content area */}
-      <main className="flex-1 mt-4 md:mt-8 overflow-auto bg-gray-100 p-4 md:p-6 pb-48 md:pb-56">
+      <main className="flex-1 mt-4 md:mt-8 bg-gray-100 p-4 md:p-6 pb-10">
         <ul className="max-w-4xl mx-auto space-y-6">
           {conferences.map((conference, index) => (
             <motion.li
@@ -496,8 +509,8 @@ const Conferences = () => {
         </ul>
       </main>
 
-      {/* Fixed bottom carousel */}
-      <div className="fixed bottom-0 left-0 right-0 z-20">
+      {/* Bottom sections (Carousel) */}
+      <div className="bg-gray-100">
         <FooterImageSlider
           slides={slides}
           slidesToShow={confSlidesToShow}
