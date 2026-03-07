@@ -133,6 +133,11 @@ const Team = () => {
       icon: <GraduationCap className="mr-2 text-teal-600" />,
       scholars: [
         {
+          name: "Bhukya Prakash, Vannam Rohit",
+          topic:
+            "Developing a platform for folk artists",
+        },
+        {
           name: "Rohit Vannam, Gopu Abhinav Reddy",
           topic:
             "Researching the conservation of indegenous art work",

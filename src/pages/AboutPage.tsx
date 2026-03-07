@@ -9,13 +9,12 @@ const AboutPage = () => {
   const newsAndEvents = [
     {
       id: 20,
-      date: "1st January 2026 – 31st December 2028",
-      event:
-        "Prof. Ghosal has become the RuTAG  - Coordinator of IIT Kharagpur.",
+      date: "",
+      event: "RuTAG Coordinator",
     },
     {
       id: 19,
-      date: "2025 - present",
+      date: "",
       event:
         "Prof. Ghosal has become the Core Committee Member – SPARC (Schemes for Promotion of Academic and Research Collaboration), Ministry of Education, Government of India.",
     },
