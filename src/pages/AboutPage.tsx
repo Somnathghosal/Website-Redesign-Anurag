@@ -1,6 +1,6 @@
 import { BookMarked, Calendar, FileText } from "lucide-react";
 import { motion } from "framer-motion";
-import { FooterVideo } from "../components/FooterImageSlider";
+// import { FooterVideo } from "../components/FooterImageSlider";
 
 const AboutPage = () => {
   // Blog posts data array for cleaner rendering
@@ -352,7 +352,7 @@ const AboutPage = () => {
 
         {/* Blog Section */}
       </div>
-      <FooterVideo />
+      {/* <FooterVideo /> */}
     </motion.div>
   );
 };
