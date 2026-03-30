@@ -8,13 +8,23 @@ const AboutPage = () => {
   // Function to navigate to blog post page
   const newsAndEvents = [
     {
+      id: 22,
+      date: "20th March 2026",
+      event: "Prof. Ghosal became Head, Centre for Rural Development and Innovative Sustainable Technology (CRDIST) .",
+    },
+    {
+      id: 21,
+      date: "18th November 2026",
+      event: "Dr, Ghosal became member of Dean, Research and Development (DoRD) Advisory Council.",
+    },
+    {
       id: 20,
-      date: "",
+      date: "1st January 2026",
       event: "RuTAG Coordinator",
     },
     {
       id: 19,
-      date: "",
+      date: "9th October 2025",
       event:
         "Prof. Ghosal has become the Core Committee Member – SPARC (Schemes for Promotion of Academic and Research Collaboration), Ministry of Education, Government of India.",
     },
