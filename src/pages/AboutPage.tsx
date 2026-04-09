@@ -13,20 +13,9 @@ const AboutPage = () => {
       event: "Prof. Ghosal became Head, Centre for Rural Development and Innovative Sustainable Technology (CRDIST) .",
     },
     {
-      id: 21,
-      date: "18th November 2026",
-      event: "Dr, Ghosal became member of Dean, Research and Development (DoRD) Advisory Council.",
-    },
-    {
       id: 20,
       date: "1st January 2026",
       event: "RuTAG Coordinator",
-    },
-    {
-      id: 19,
-      date: "9th October 2025",
-      event:
-        "Prof. Ghosal has become the Core Committee Member – SPARC (Schemes for Promotion of Academic and Research Collaboration), Ministry of Education, Government of India.",
     },
     {
       id: 18,
@@ -35,16 +24,27 @@ const AboutPage = () => {
         "Dr. Somnath Ghosal Attended International Symposium on “Climate Change, Disasters, and Adaptation” at Mizoram University, Aizawl as the 'Guest of Honour'.",
     },
     {
-      id: 17,
-      date: "April 2025 ",
+      id: 21,
+      date: "18th November 2025",
+      event: "Dr, Ghosal became member of Dean, Research and Development (DoRD) Advisory Council.",
+    },
+    {
+      id: 19,
+      date: "9th October 2025",
       event:
-        "Dr. Somnath Ghosal received TUM Global Incentive Fund 2025, Germany for conducting project on 'Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management'.",
+        "Prof. Ghosal has become the Core Committee Member – SPARC (Schemes for Promotion of Academic and Research Collaboration), Ministry of Education, Government of India.",
     },
     {
       id: 16,
       date: "May - July 2025",
       event:
         'Dr. Somnath Ghosal visiting British Columbia, Canada to conduct research projects.',
+    },
+    {
+      id: 17,
+      date: "April 2025 ",
+      event:
+        "Dr. Somnath Ghosal received TUM Global Incentive Fund 2025, Germany for conducting project on 'Advancing Agricultural Resilience in West Bengal through Innovative Solutions in Value Chain Financing, Technology Adoption, and Smart Resource Management'.",
     },
     {
       id: 15,
@@ -57,12 +57,6 @@ const AboutPage = () => {
       date: "13th - 16th March 2025",
       event:
         'Mr. Anand Kumar presented a paper at the 16th International Conference on "Environmental and Rural Development" held at Tokyo University of Agriculture, Japan.',
-    },
-    {
-      id: 13,
-      date: "2023 - 2025",
-      event:
-        "Dr. Somnath Ghosal received Research Associate position from University of the Fraser Valley, British Columbia, Canada.",
     },
     {
       id: 12,
@@ -93,6 +87,12 @@ const AboutPage = () => {
       date: "23rd September 2024",
       event:
         'Dr. Somnath Ghosal took part as an expert panellist at the consultative workshop on "Promoting Entrepreneurship, Skilling and Employment by Leveraging Demographic Dividend of the State" organized by Tripura Rural Livelihood Mission, Rural Development Department, Government of Tripura, Agartala.',
+    },
+    {
+      id: 13,
+      date: "2023 - 2025",
+      event:
+        "Dr. Somnath Ghosal received Research Associate position from University of the Fraser Valley, British Columbia, Canada.",
     },
     {
       id: 7,
@@ -340,6 +340,13 @@ const AboutPage = () => {
                   View all blog posts
                 </p>
                 <div className="flex flex-col gap-4">
+                  <a
+                    href="https://drive.google.com/file/d/1xu-AEfknJzS_ZIpPv8O7wlYpJOL4n4bs/view?usp=drivesdk"
+                    target="_blank"
+                    className="text-xl hover:text-blue-500 hover:underline text-blue-700"
+                  >
+                    Social Relationships and Elderly Wellbeing: A Psychosocial Study
+                  </a>
                   <a
                     href="https://drive.google.com/file/d/1DMchF-Z5q211vFb9o-sNxh1VUXnH96i1/view?usp=drive_link"
                     target="_blank"
