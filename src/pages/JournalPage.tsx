@@ -213,7 +213,7 @@ const JournalPage = () => {
           authors: "Ghosal, S., Ghosh, M. and Kumar, H.",
           year: 2026,
           title: "Human Interactions with Greeneries in an Indian Urban Environment: Exploring Determinants of Motivations and Constraints of City Dwellers' Interaction Towards Green Spaces",
-          journal: "Asia-Pacific Journal of Regional Science",
+          journal: "Case Studies in the Environment",
           doi: "",
         },
         {

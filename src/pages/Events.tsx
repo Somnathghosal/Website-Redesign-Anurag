@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 const events = [
   {
     title:
+      "SPARC National Conclave 2026",
+    location: "IIT Kharagpur Research Park, Kolkata",
+    date: "8th – 9th March 2026",
+  },
+  {
+    title:
       "Coordinator for IIT Kharagpur – University of Edinburgh Joint International Workshop on 'Water-Energy-Food-Health Nexus'",
     location: "IIT Kharagpur",
     date: "27th May – 31st May 2024",

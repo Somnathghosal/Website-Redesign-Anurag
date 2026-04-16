@@ -8,14 +8,19 @@ const AboutPage = () => {
   // Function to navigate to blog post page
   const newsAndEvents = [
     {
+      id: 23,
+      date: "25th March 2026",
+      event: "Prof. Ghosal has become Vice President and Council Member of ICERD, Tokyo, Japan.",
+    },
+    {
       id: 22,
       date: "20th March 2026",
-      event: "Prof. Ghosal became Head, Centre for Rural Development and Innovative Sustainable Technology (CRDIST) .",
+      event: "Prof. Ghosal became Head, Centre for Rural Development and Innovative Sustainable Technology (CRDIST).",
     },
     {
       id: 20,
       date: "1st January 2026",
-      event: "RuTAG Coordinator",
+      event: "RuTAG Coordinator.",
     },
     {
       id: 18,

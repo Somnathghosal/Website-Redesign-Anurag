@@ -160,8 +160,8 @@ const ProjectsComponent = () => {
       type: "Co-Principal Investigator",
       projects: [
         {
-          title: "Review and Update of the Master Plan for the IIT Kharagpur Campus",
-          period: "2024 - 2025",
+          title: "Preparation of Sivagangai Regional Plan 2047",
+          period: "2024 – 2026",
           role: "Co-Principal Investigator",
         },
       ],
@@ -250,8 +250,8 @@ const ProjectsComponent = () => {
       type: "Co-Principal Investigator",
       projects: [
         {
-          title: "Preparation of Sivagangai Regional Plan 2047",
-          period: "2024 – 2025",
+          title: "Review and Update of the Master Plan for the IIT Kharagpur Campus",
+          period: "2024 - 2025",
           role: "Co-Principal Investigator",
         },
         {

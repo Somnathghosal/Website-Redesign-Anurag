@@ -23,6 +23,7 @@ const researchData: ResearchItem[] = [
       "Analyzing how scientific research can directly inform public policies and contribute to societal development.",
     details:
       "The initiative investigates the complex interplay between scientific research and its implications for public policy and societal development. This project aims to show how scientific discoveries may be strategically used to educate and create policies that support sustainable development and social well-being by examining a variety of case studies. The program aims to build a more informed and proactive public policy landscape by highlighting the significance of interdisciplinary methods and active participation from diverse stakeholders to bridge the gap between scientific and societal requirements.",
+      videoUrl:"https://www.youtube.com/embed/pSwhoYvwpPw?si=aOKyvsV9rBrwqQTq"
   },
   {
     title: "Rural Health, and Hygenic Practices",

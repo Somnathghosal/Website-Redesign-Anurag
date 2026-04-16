@@ -6,6 +6,12 @@ import Img2 from "../assests/img2.jpg";
 
 const conferences = [
   {
+    name: "17th International Conference on “Environment and Rural Development",
+    location: "Royal University of Agriculture, Phnom Penh, Cambodia",
+    date: "26th – 29th March 2026",
+    presentationTitle: "Education for Sustainable Rural Development: Empowering Indigenous Communities Through School-based Safe Potable Water Intervention",
+  },
+  {
     name: "International Cancer Research Conclave – ll",
     location: "GITAM School of Science, Visakhapatnam",
     date: "16th February 2026",

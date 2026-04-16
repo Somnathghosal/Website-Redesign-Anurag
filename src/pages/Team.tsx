@@ -70,11 +70,11 @@ const Team = () => {
       scholars: [
 
         {
-          name: "Vijeta Kachhap (2026 – 2029)",
+          name: "Vijeta Kachhap (2026 – Present)",
           topic: "Artificial Intelligence, Public Policy, and Law",
         },
         {
-          name: "Saikat Paul (2026 – 2029)",
+          name: "Saikat Paul (2026 – Present)",
           topic: "Impact of Climate Change on Rural Livelihoods",
         },
         {
@@ -135,7 +135,7 @@ const Team = () => {
         {
           name: "Bhukya Prakash, Vannam Rohit",
           topic:
-            "Developing a platform for folk artists",
+            "Transforming rural development through action research",
         },
         {
           name: "Rohit Vannam, Gopu Abhinav Reddy",
