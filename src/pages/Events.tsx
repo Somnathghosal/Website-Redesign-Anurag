@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const events = [
   {
     title:
-      "SPARC National Conclave 2026",
+      "SPARC National Conclave 2026 ",
     location: "IIT Kharagpur Research Park, Kolkata",
     date: "8th – 9th March 2026",
   },
